@@ -1,0 +1,9 @@
+#/usr/bin/env sh
+
+# get flake root relative to this script
+root=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
+
+# abort on error
+set -e
+
+nix run $root -- switch --flake path:$root
