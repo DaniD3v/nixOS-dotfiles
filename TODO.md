@@ -5,7 +5,6 @@
 - [ ] move home packages to modules  
 - [ ] move dconf to theming category  
 - [ ] move system packages to home.nix  
-- [ ] rclone secrets  
 - [ ] add a README
 
 ## Low-Effort:
@@ -28,3 +27,4 @@
 ## Completed (for motivational purposes)
 - [x] get the flake to work  
 - [x] add ags to flake  
+- [x] rclone secrets  
