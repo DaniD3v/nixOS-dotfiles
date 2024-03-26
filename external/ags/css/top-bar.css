@@ -1,0 +1,20 @@
+
+.rounded {
+    border-radius: 8px;
+}
+
+.margin-lr {
+    margin: 0 15px 0 15px;
+}
+
+.color-border-transition {
+    border: 1px solid black;
+}
+
+.color-background {
+    background-color: #292929;
+}
+
+.color-widget-box {
+    background-color: #353535;
+}

@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+set -e
+wallpaper=$(readlink -f $1)
+
+wallust $wallpaper 1>/dev/null
+
+gradience-cli monet -p $wallpaper -n ~/.cache/wal/preset.json --theme dark 2>/dev/null
+gradience-cli apply -n ~/.cache/wal/preset.json 2>/dev/null
+
+# TODO: Don't leak memory -> Wait for new hyprpaper version
+hyprctl hyprpaper preload $wallpaper 1>/dev/null
+hyprctl hyprpaper wallpaper eDP-1,$wallpaper 1>/dev/null
+
+pywalfox update 2>/dev/null
