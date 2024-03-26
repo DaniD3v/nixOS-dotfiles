@@ -8,7 +8,6 @@
 - [ ] add a README
 
 ## Low-Effort:
-- [ ] !! add override to sddm-sugar-dark PR  
 - [ ] try out hyprlock  
 - [ ] replace hyprpaper with swww (hyprwinwrap + plugins)  
 - [ ] setup rofi  
