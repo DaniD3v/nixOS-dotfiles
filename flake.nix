@@ -20,7 +20,7 @@
     nixpkgs,
     home-manager,
     ags,
-  } @ inputs: let
+  }: let
     system = "x86_64-linux";
     username = "notyou";
   in {
@@ -29,7 +29,7 @@
     homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
       pkgs = import nixpkgs {inherit system;};
       extraSpecialArgs = {
-        inherit inputs;
+        inherit ags;
         inherit username;
       };
 

@@ -1,5 +1,5 @@
-{inputs, ...}: {
-  imports = [inputs.ags.homeManagerModules.default];
+{ags, ...}: {
+  imports = [ags.homeManagerModules.default];
 
   programs.ags = {
     enable = true;
