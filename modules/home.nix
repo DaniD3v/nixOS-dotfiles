@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  username,
+  pkgs,
+  ...
+}: {
   imports = [
     ./desktop/hyprland.nix
 
@@ -15,8 +19,8 @@
   nixpkgs.config.allowUnfree = true;
 
   home = {
-    username = "notyou";
-    homeDirectory = "/home/notyou";
+    username = "${username}";
+    homeDirectory = "/home/${username}";
 
     sessionPath = [".local/bin"];
     file.".local/bin" = {

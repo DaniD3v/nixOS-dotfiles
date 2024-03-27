@@ -22,12 +22,16 @@
     ags,
   } @ inputs: let
     system = "x86_64-linux";
+    username = "notyou";
   in {
     packages.${system}.default = home-manager.defaultPackage.${system};
 
-    homeConfigurations.notyou = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
       pkgs = import nixpkgs {inherit system;};
-      extraSpecialArgs = {inherit inputs;};
+      extraSpecialArgs = {
+        inherit inputs;
+        inherit username;
+      };
 
       modules = [./modules/home.nix];
     };
