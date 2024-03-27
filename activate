@@ -6,4 +6,6 @@ set -e
 # get flake root relative to this script
 root=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
 
-nix run $root -- switch --flake path:$root
+# home-manager switch with experimental features temporarily enabled
+nix --extra-experimental-features 'nix-command flakes' run $root \
+  -- switch --extra-experimental-features 'nix-command flakes' --flake path:$root
