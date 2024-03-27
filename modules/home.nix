@@ -31,6 +31,11 @@
     };
 
     packages = with pkgs; [
+      (pkgs.discord.override {
+        withOpenASAR = true;
+        withVencord = true;
+      })
+
       rofi-wayland # yerp
       dunst
 
