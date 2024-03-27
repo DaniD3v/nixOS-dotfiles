@@ -13,9 +13,11 @@
 - [ ] setup rofi  
 - [ ] setup backup with duplicity  
 - [ ] impermanence + porting the remaining dotter stuff (because this will break it)  
+- [ ] add install script that auto-fills username
 - [ ] git pgp signatures  
 
 ## High-Effort
+- [ ] secret management (not world readable & install without secrets)
 - [ ] matugen integration  
 - [ ] fix the neovim config (and port the existing one)  
 - [ ] translate hyprland config to nix native one  
