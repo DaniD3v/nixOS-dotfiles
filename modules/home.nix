@@ -46,6 +46,7 @@
       grim
 
       yt-dlp # kinda required for zsh alias?
+      btop
       pigz # for zsh alias
       bat
 
