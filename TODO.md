@@ -5,7 +5,6 @@
 - [ ] move home packages to modules  
 - [ ] move dconf to theming category  
 - [ ] move system packages to home.nix  
-- [ ] add a README
 
 ## Low-Effort:
 - [ ] try out hyprlock  
@@ -26,6 +25,7 @@
 - [ ] write ags widgets  
 
 ## Completed (for motivational purposes)
+- [x] add a README
 - [x] get the flake to work  
 - [x] add ags to flake  
 - [x] rclone secrets  

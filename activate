@@ -1,5 +1,13 @@
 #/usr/bin/env sh
 
+# Check if the script is run as root
+if [ "$(id -u)" -eq 0 ]; then
+    echo "This script should not be run as root. Please run as a normal user." >&2
+    echo "To resolve the nix permission error check the note in the Install section of the README" >&2
+    
+    exit 1
+fi
+
 # abort on error
 set -e
 
