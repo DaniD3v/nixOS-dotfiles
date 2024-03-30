@@ -13,7 +13,6 @@
     ./programs/ssh.nix
 
     ./other/onedrive.nix
-    # ./nix/other/wallust/wallust.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -36,7 +35,7 @@
         withVencord = true;
       })
 
-      rofi-wayland # yerp
+      rofi-wayland
       dunst
 
       btop
@@ -51,8 +50,5 @@
     };
   };
 
-  programs.home-manager = {
-    enable = true;
-    # path = "$HOME/devel/home-manager";
-  };
+  programs.home-manager.enable = true;
 }
