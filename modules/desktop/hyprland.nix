@@ -8,10 +8,21 @@
     enable = true;
   };
 
-  home.packages = [pkgs.hyprpaper];
-
   xdg.configFile."hypr" = {
     source = ../../external/hypr;
     recursive = true;
   };
+
+  # Required packages for the config to work
+  home.packages = with pkgs; [
+    hyprpaper
+
+    brightnessctl
+    playerctl
+
+    # screenshots
+    wl-clipboard
+    slurp
+    grim
+  ];
 }

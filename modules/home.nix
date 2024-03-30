@@ -39,15 +39,7 @@
       rofi-wayland # yerp
       dunst
 
-      brightnessctl
-      wl-clipboard # for grim + slurp
-      playerctl
-      slurp
-      grim
-
       btop
-
-      gnome.adwaita-icon-theme
     ];
 
     stateVersion = "23.11";

@@ -2,7 +2,6 @@
 # TODO:
 
 ## Easy:
-- [ ] move home packages to modules
 - [ ] move dconf to theming category
 - [ ] move system packages to home.nix
 
@@ -32,3 +31,4 @@
 - [x] get the flake to work
 - [x] add ags to flake
 - [x] rclone secrets
+- [x] move home packages to modules
