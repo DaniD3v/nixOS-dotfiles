@@ -1,8 +1,11 @@
-#!/usr/bin/env sh
+#!/bin/sh
+
+# Abort on error
+set -e
 
 # Resolves the full path of a command, following symlinks to their source
 resolve_symlink() {
-    local targetFile=$1
+    targetFile="$1"
 
     cd "$(dirname "$targetFile")"
     targetFile=$(basename "$targetFile")
@@ -15,14 +18,14 @@ resolve_symlink() {
     done
 
     # Compute the canonicalized absolute pathname
-    local physDir=$(pwd -P)
-    local result="$physDir/$targetFile"
-    echo $result
+    physDir="$(pwd -P)"
+    result="$physDir/$targetFile"
+    echo "$result"
 }
 
 # Extracts the package name from a Nix store path
 extract_package_name() {
-    local resolved_path="$1"
+    resolved_path="$1"
     # Extract the package name from the path, assumes format is /nix/store/<hash>-<pkgName>-<version>/...
     echo "$resolved_path" | awk -F'/' '{print $(NF-2)}' | cut -d'-' -f2
 }
@@ -32,7 +35,7 @@ evaluate_mode=0
 command_name=""
 
 # Parse arguments
-while [[ "$#" -gt 0 ]]; do
+while [ "$#" -gt 0 ]; do
     case $1 in
         -e|--evaluate) evaluate_mode=1 ;;
         *) command_name="$1" ;;
@@ -40,7 +43,7 @@ while [[ "$#" -gt 0 ]]; do
     shift
 done
 
-if [[ -z "$command_name" ]]; then
+if [ -z "$command_name" ]; then
     echo "Usage: $0 [-e|--evaluate] <command>"
     exit 1
 fi
@@ -48,7 +51,7 @@ fi
 # Locate the command
 full_path=$(which "$command_name" 2>/dev/null)
 
-if [[ -z "$full_path" ]]; then
+if [ -z "$full_path" ]; then
     echo "Command not found: $command_name"
     exit 2
 fi
@@ -56,7 +59,7 @@ fi
 # Resolve to the original file if it is a symlink
 resolved_path=$(resolve_symlink "$full_path")
 
-if [[ "$evaluate_mode" -eq 1 ]]; then
+if [ "$evaluate_mode" -eq 1 ]; then
     # Extract the package name and format for systemd module
     package_name=$(extract_package_name "$resolved_path")
     echo "\${pkgs.$package_name}/bin/$command_name"
