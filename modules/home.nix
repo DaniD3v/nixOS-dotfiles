@@ -47,7 +47,6 @@
 
       btop
 
-      zsh-powerlevel10k
       gnome.adwaita-icon-theme
     ];
 
