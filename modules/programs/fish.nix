@@ -54,4 +54,11 @@
       fish_add_path ~/.local/bin
     '';
   };
+
+  # Required for the aliases to work
+  home.packages = with pkgs; [
+    yt-dlp
+    pigz
+    bat
+  ];
 }
