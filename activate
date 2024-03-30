@@ -1,19 +1,30 @@
-#/usr/bin/env sh
+#!/usr/bin/env bash
 
-# Check if the script is run as root
-if [ "$(id -u)" -eq 0 ]; then
-    echo "This script should not be run as root. Please run as a normal user." >&2
-    echo "To resolve the nix permission error check the note in the Install section of the README" >&2
-    
+# abort on bad exit code
+set -e
+
+# Abort if the nix daemon isn't running
+if ! [ -S "/nix/var/nix/daemon-socket/socket" ]; then
+    echo "The nix daemon is not running." >&2
+    printf "Is the systemd service enabled?\n" >&2
+
+    echo "To start the systemd service run 'sudo systemctl enable nix-daemon --now'" >&2
+    echo "If that doesn't work you can start the daemon manually with 'sudo nix-daemon'" >&2
+
     exit 1
 fi
 
-# abort on error
-set -e
+# Abort if the script is run as root
+if [ "$(id -u)" -eq 0 ]; then
+    echo "This script should not be run as root." >&2
+    echo "Please run it as a normal user." >&2
+
+    exit 1
+fi
 
 # get flake root relative to this script
-root=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
+root=$(dirname -- "$(readlink -f -- "${BASH_SOURCE[0]}")")
 
 # home-manager switch with experimental features temporarily enabled
-nix --extra-experimental-features 'nix-command flakes' run $root \
-  -- switch --extra-experimental-features 'nix-command flakes' --flake path:$root
+nix --extra-experimental-features 'nix-command flakes' run "$root" \
+  -- switch --extra-experimental-features 'nix-command flakes' --flake path:"$root"
