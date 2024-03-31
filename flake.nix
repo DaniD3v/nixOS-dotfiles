@@ -9,6 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    matugen = {
+      url = "github:/InioX/Matugen";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     ags = {
       url = "github:Aylur/ags";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,6 +24,7 @@
     self,
     nixpkgs,
     home-manager,
+    matugen,
     ags,
   }: let
     system = "x86_64-linux";
@@ -29,8 +35,7 @@
     homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
       pkgs = import nixpkgs {inherit system;};
       extraSpecialArgs = {
-        inherit ags;
-        inherit username;
+        inherit username system matugen ags;
       };
 
       modules = [./modules/home.nix];

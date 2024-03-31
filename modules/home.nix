@@ -12,6 +12,8 @@
     ./programs/git.nix
     ./programs/ssh.nix
 
+    ./theming/matugen.nix
+
     ./other/onedrive.nix
   ];
 
