@@ -1,7 +1,5 @@
 {...}: {
   programs.ssh = {
-    enable = true;
-
     matchBlocks = {
       "aur.archlinux.org" = {
         identityFile = toString ../../secrets/ssh/aur;

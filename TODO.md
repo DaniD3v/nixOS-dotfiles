@@ -3,7 +3,6 @@
 
 ## Easy:
 - [ ] move dconf to theming category
-- [ ] move system packages to home.nix
 
 ## Low-Effort:
 - [ ] try out hyprlock
@@ -12,7 +11,6 @@
 - [ ] setup backup with duplicity
 - [ ] impermanence + porting the remaining dotter stuff (because this will break it)
 - [ ] make the secret management optional
-- [ ] add username-dependant packages
 - [ ] add install script that auto-fills username
 - [ ] git pgp signatures
 - [ ] rewrite nix-which script
@@ -27,6 +25,8 @@
 - [ ] write ags widgets
 
 ## Completed (for motivational purposes)
+- [x] add username-dependant packages
+- [x] move system packages to home.nix
 - [x] add a README
 - [x] get the flake to work
 - [x] add ags to flake

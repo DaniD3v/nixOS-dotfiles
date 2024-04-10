@@ -1,23 +1,41 @@
 {
+  system,
   username,
   pkgs,
+  nixpkgs-unstable,
   ...
-}: {
-  imports = [
-    ./desktop/hyprland.nix
+}: let
+  userImport =
+    if (username == "notyou")
+    then [./programs/notyou.nix]
+    else [];
+in {
+  imports =
+    [
+      ./desktop/hyprland.nix
 
-    ./programs/neovim.nix
-    ./programs/kitty.nix
-    ./programs/fish.nix
-    ./programs/git.nix
-    ./programs/ssh.nix
+      ./programs/neovim.nix
+      ./programs/kitty.nix
+      ./programs/fish.nix
+      ./programs/git.nix
+      ./programs/ssh.nix
 
-    ./theming/matugen.nix
+      ./theming/matugen.nix
 
-    ./other/onedrive.nix
-  ];
+      ./other/onedrive.nix
+    ]
+    ++ userImport;
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+
+    packageOverrides = pkgs: {
+      unstable = import nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
+    };
+  };
 
   home = {
     username = "${username}";
@@ -39,8 +57,6 @@
 
       rofi-wayland
       dunst
-
-      btop
     ];
 
     stateVersion = "23.11";
