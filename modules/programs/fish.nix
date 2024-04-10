@@ -30,13 +30,13 @@
     ];
 
     shellAbbrs = {
-      nmwifi = "nmcli d wifi";
+      nmwifi = "nmcli device wifi";
       with-pkg = "nix-shell --run fish -p";
 
-      bcomp = "tar --use-compress-program='pigz -9' -cf";
+      bcomp = "tar --use-compress-program='pigz -9' -cf compressed.tar.xz";
       yoink = "git clone --depth 1 --recurse-submodules";
 
-      nmcn = "nmcli d wifi connect";
+      nmcn = "nmcli device wifi connect";
       btcn = "bluetoothctl connect";
     };
 
@@ -45,6 +45,7 @@
       yt-dlp-mp3 = "yt-dlp -x --audio-format mp3 --audio-quality 0";
       zclippy = "cargo clippy -- -W clippy::complexity -W clippy::correctness -W clippy::perf -W clippy::style -W clippy::suspicious";
 
+      nano = "nvim";
       cat = "bat";
     };
 
