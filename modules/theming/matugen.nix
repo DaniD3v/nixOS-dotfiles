@@ -21,5 +21,8 @@
     # };
   };
 
+  # https://github.com/InioX/matugen/issues/60
+  xdg.configFile."matugen/config.toml".source = ../../external/matugen.toml;
+
   home.packages = [matugen.packages.${system}.default];
 }
