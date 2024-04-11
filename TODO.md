@@ -3,6 +3,7 @@
 
 ## Easy:
 - [ ] move dconf to theming category
+- [ ] update README to reflect new user-system changes
 
 ## Low-Effort:
 - [ ] try out hyprlock
