@@ -62,11 +62,5 @@ in {
     stateVersion = "23.11";
   };
 
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-    };
-  };
-
   programs.home-manager.enable = true;
 }

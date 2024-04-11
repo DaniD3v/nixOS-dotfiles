@@ -2,7 +2,6 @@
 # TODO:
 
 ## Easy:
-- [ ] move dconf to theming category
 - [ ] update README to reflect new user-system changes
 
 ## Low-Effort:
@@ -26,6 +25,7 @@
 - [ ] write ags widgets
 
 ## Completed (for motivational purposes)
+- [x] move dconf to theming category
 - [x] add username-dependant packages
 - [x] move system packages to home.nix
 - [x] add a README
