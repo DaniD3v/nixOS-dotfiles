@@ -8,6 +8,10 @@ gtk_theme = true
 kitty = true
 dunst = true
 
+[templates.rofi]
+input_path = "~/dotfiles/external/templates/rofi.rasi"
+output_path = "~/.config/rofi/config.rasi"
+
 # disabled because of how ugly the theme is
 # [templates.gtk]
 # input_path = "~/dotfiles/external/templates/gtk.css"

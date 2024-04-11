@@ -21,6 +21,8 @@ in {
       ./programs/ssh.nix
 
       ./theming/matugen.nix
+      ./theming/firefox.nix
+      ./theming/gtk.nix
 
       ./other/onedrive.nix
     ]
