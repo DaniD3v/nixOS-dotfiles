@@ -5,9 +5,9 @@
   nixpkgs-unstable,
   ...
 }: let
-  userImport =
-    if (username == "notyou")
-    then [./programs/notyou.nix]
+  userConfig =
+    if builtins.pathExists ./users/${username}.nix
+    then [./users/${username}.nix]
     else [];
 in {
   imports =
@@ -24,7 +24,7 @@ in {
 
       ./other/onedrive.nix
     ]
-    ++ userImport;
+    ++ userConfig;
 
   nixpkgs.config = {
     allowUnfree = true;
