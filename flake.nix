@@ -41,7 +41,7 @@
         inherit nixpkgs-unstable username system matugen ags;
       };
 
-      modules = [./modules/home.nix];
+      modules = [./nix/home.nix];
     };
   };
 }
