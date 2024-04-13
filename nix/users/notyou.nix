@@ -57,7 +57,7 @@
   ];
 
   programs = {
-    kitty.enable = true;
+    alacritty.enable = true;
 
     neovim.enable = true;
     fish.enable = true;
