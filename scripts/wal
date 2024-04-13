@@ -3,10 +3,7 @@
 set -e
 wallpaper=$(readlink -f "$1")
 
+swww img ${wallpaper} -t grow --transition-pos 0.7,0.9
 matugen image "${wallpaper}" 1>/dev/null
-
-# TODO: Don't leak memory -> Wait for new hyprpaper version
-hyprctl hyprpaper preload "$wallpaper" 1>/dev/null
-hyprctl hyprpaper wallpaper eDP-1,"$wallpaper" 1>/dev/null
 
 pywalfox update 2>/dev/null

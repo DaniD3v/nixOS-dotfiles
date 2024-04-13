@@ -14,6 +14,7 @@ in {
     [
       ./desktop/hyprland.nix
 
+      ./programs/alacritty.nix
       ./programs/neovim.nix
       ./programs/kitty.nix
       ./programs/fish.nix
@@ -50,16 +51,6 @@ in {
       executable = true;
       recursive = true;
     };
-
-    packages = with pkgs; [
-      (pkgs.discord.override {
-        withOpenASAR = true;
-        withVencord = true;
-      })
-
-      rofi-wayland
-      dunst
-    ];
 
     stateVersion = "23.11";
   };

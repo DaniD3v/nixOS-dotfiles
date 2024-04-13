@@ -1,21 +1,22 @@
 {pkgs, ...}: {
   imports = [
     ./swaylock.nix
+    ./swww.nix
     ./ags.nix
   ];
 
   wayland.windowManager.hyprland = {
     enable = true;
+    package = pkgs.unstable.hyprland;
   };
 
-  xdg.configFile."hypr" = {
-    source = ../../external/hypr;
-    recursive = true;
-  };
+  xdg.configFile."hypr/hyprland.conf".source = ../../external/hyprland.conf;
 
   # Required packages for the config to work
   home.packages = with pkgs; [
-    hyprpaper
+    unstable.swww
+    rofi-wayland
+    dunst
 
     brightnessctl
     playerctl

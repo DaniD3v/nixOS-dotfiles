@@ -30,6 +30,10 @@
     baobab
 
     # Applications
+    (pkgs.discord.override {
+      withOpenASAR = true;
+      withVencord = true;
+    })
     teams-for-linux
     prismlauncher
     burpsuite

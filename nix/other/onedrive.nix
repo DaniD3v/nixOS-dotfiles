@@ -4,8 +4,7 @@
       Description = "Mounts Onedrive storage";
       Documentation = ["man:rclone(1)"];
 
-      After = ["network-online.target"];
-      Wants = ["network-online.target"];
+      Requires = ["network-online.target"];
     };
 
     Service = {
@@ -26,6 +25,6 @@
       ExecStop = "${pkgs.fuse}/bin/fusermount -u %h/onedrive";
     };
 
-    Install.WantedBy = ["default.target"];
+    Install.WantedBy = ["network-online.target"];
   };
 }
