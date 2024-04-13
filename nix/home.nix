@@ -16,7 +16,6 @@ in {
 
       ./programs/alacritty.nix
       ./programs/neovim.nix
-      ./programs/kitty.nix
       ./programs/fish.nix
       ./programs/git.nix
       ./programs/ssh.nix
