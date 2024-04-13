@@ -28,23 +28,23 @@
     ];
 
     shellAbbrs = {
-      nmwifi = "nmcli device wifi";
-      with-pkg = "nix-shell --run fish -p";
+      nmwifi = "${pkgs.networkmanager}/bin/nmcli device wifi";
+      with-pkg = "${pkgs.nix}/bin/nix-shell --run fish -p";
 
-      bcomp = "tar --use-compress-program='pigz -9' -cf compressed.tar.xz";
-      yoink = "git clone --depth 1 --recurse-submodules";
+      bcomp = "${pkgs.gnutar}/bin/tar --use-compress-program='${pkgs.pigz}/bin/pigz -9' -cf compressed.tar.xz";
+      yoink = "${pkgs.git}/bin/git clone --depth 1 --recurse-submodules";
 
-      nmcn = "nmcli device wifi connect";
-      btcn = "bluetoothctl connect";
+      nmcn = "${pkgs.networkmanager}/bin/nmcli device wifi connect";
+      btcn = "${pkgs.bluez}/bin/bluetoothctl connect";
     };
 
     shellAliases = {
-      yt-dlp-mp4 = "yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'";
-      yt-dlp-mp3 = "yt-dlp -x --audio-format mp3 --audio-quality 0";
-      zclippy = "cargo clippy -- -W clippy::complexity -W clippy::correctness -W clippy::perf -W clippy::style -W clippy::suspicious";
+      yt-dlp-mp4 = "${pkgs.yt-dlp}/bin/yt-dlp f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'";
+      yt-dlp-mp3 = "${pkgs.yt-dlp}/bin/yt-dlp -x --audio-format mp3 --audio-quality 0";
+      zclippy = "${pkgs.rustup}/bin/cargo clippy -- -W clippy::complexity -W clippy::correctness -W clippy::perf -W clippy::style -W clippy::suspicious";
 
-      nano = "nvim";
-      cat = "bat";
+      nano = "${pkgs.neovim}/bin/nvim";
+      cat = "${pkgs.bat}/bin/bat";
     };
 
     interactiveShellInit = ''
@@ -53,11 +53,4 @@
       fish_add_path ~/.local/bin
     '';
   };
-
-  # Required for the aliases to work
-  home.packages = with pkgs; [
-    yt-dlp
-    pigz
-    bat
-  ];
 }
