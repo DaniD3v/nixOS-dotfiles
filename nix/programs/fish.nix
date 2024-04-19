@@ -35,7 +35,7 @@
       with-pkg = "${pkgs.nix}/bin/nix-shell --run fish -p";
       yoink = "${pkgs.git}/bin/git clone --depth 1 --recurse-submodules";
       bcomp = "${pkgs.gnutar}/bin/tar --use-compress-program='${pkgs.pigz}/bin/pigz -9' -cf compressed.tar.xz";
-      
+
       yt-dlp-mp4 = "${pkgs.yt-dlp}/bin/yt-dlp f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'";
       yt-dlp-mp3 = "${pkgs.yt-dlp}/bin/yt-dlp -x --audio-format mp3 --audio-quality 0";
       zclippy = "${pkgs.rustup}/bin/cargo clippy -- -W clippy::complexity -W clippy::correctness -W clippy::perf -W clippy::style -W clippy::suspicious";

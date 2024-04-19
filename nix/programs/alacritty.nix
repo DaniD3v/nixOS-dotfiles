@@ -6,7 +6,10 @@
     };
 
     window = {
-      padding = { x = 5; y = 5; };
+      padding = {
+        x = 5;
+        y = 5;
+      };
       opacity = 0.5;
     };
   };

@@ -1,4 +1,8 @@
-{pkgs, lib, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     ./swaylock.nix
     ./swww.nix
@@ -89,64 +93,81 @@
 
       bind = let
         windowMovementKeys = [
-          { key = "H"; dir = "l"; }
-          { key = "J"; dir = "d"; }
-          { key = "K"; dir = "u"; }
-          { key = "L"; dir = "r"; }
+          {
+            key = "H";
+            dir = "l";
+          }
+          {
+            key = "J";
+            dir = "d";
+          }
+          {
+            key = "K";
+            dir = "u";
+          }
+          {
+            key = "L";
+            dir = "r";
+          }
         ];
 
-        generateWindowMovementLines = { key, dir }: [
+        generateWindowMovementLines = {
+          key,
+          dir,
+        }: [
           "$mainMod, ${key}, movefocus, ${dir}"
           "$mainMod SHIFT, ${key}, swapwindow, ${dir}"
         ];
 
-        generateWorkspaceMovementLines = workspace:
-          let key =
-            if workspace == 10 then "0"
+        generateWorkspaceMovementLines = workspace: let
+          key =
+            if workspace == 10
+            then "0"
             else toString workspace;
-          in [
-            "$mainMod, ${key}, workspace, ${toString workspace}"
-            "$mainMod SHIFT, ${key}, movetoworkspace, ${toString workspace}"
-          ];
-      in [
-        "$mainMod, D, execr, ${pkgs.alacritty}/bin/alacritty"
-        "$mainMod, W, execr, ${pkgs.alacritty}/bin/alacritty $EDITOR"
-        "$mainMod, E, execr, ${pkgs.gnome.nautilus}/bin/nautilus -w"
-        "$mainMod, Q, execr, ${pkgs.firefox}/bin/firefox"
-        "$mainMod, A, execr, ${pkgs.gnome.gnome-calculator}/bin/gnome-calculator"
-        "$mainMod, N, execr, ${pkgs.gnome-text-editor}/bin/gnome-text-editor"
+        in [
+          "$mainMod, ${key}, workspace, ${toString workspace}"
+          "$mainMod SHIFT, ${key}, movetoworkspace, ${toString workspace}"
+        ];
+      in
+        [
+          "$mainMod, D, execr, ${pkgs.alacritty}/bin/alacritty"
+          "$mainMod, W, execr, ${pkgs.alacritty}/bin/alacritty $EDITOR"
+          "$mainMod, E, execr, ${pkgs.gnome.nautilus}/bin/nautilus -w"
+          "$mainMod, Q, execr, ${pkgs.firefox}/bin/firefox"
+          "$mainMod, A, execr, ${pkgs.gnome.gnome-calculator}/bin/gnome-calculator"
+          "$mainMod, N, execr, ${pkgs.gnome-text-editor}/bin/gnome-text-editor"
 
-        # relative path for rofi
-        "$mainMod, R, execr, ${pkgs.rofi-wayland}/bin/rofi -show-icons -show drun"
-        "$mainMod, O, execr, ${pkgs.swaylock}/bin/swaylock"
+          # relative path for rofi
+          "$mainMod, R, execr, ${pkgs.rofi-wayland}/bin/rofi -show-icons -show drun"
+          "$mainMod, O, execr, ${pkgs.swaylock}/bin/swaylock"
 
-        # using relaative path to match version
-        "$mainMod, F, execr, ${pkgs.util-linux}/bin/kill -9 $(hyprctl activewindow | ${pkgs.gnugrep}/bin/grep -oP '(?<=pid: ()\\d*)')"
-        "$mainMod, C, killactive"
-        "$mainMod, V, togglefloating"
-        "$mainMod, U, togglesplit"
-        "$mainMod SHIFT, M, exit"
+          # using relaative path to match version
+          "$mainMod, F, execr, ${pkgs.util-linux}/bin/kill -9 $(hyprctl activewindow | ${pkgs.gnugrep}/bin/grep -oP '(?<=pid: ()\\d*)')"
+          "$mainMod, C, killactive"
+          "$mainMod, V, togglefloating"
+          "$mainMod, U, togglesplit"
+          "$mainMod SHIFT, M, exit"
 
-        ", XF86AudioMute,        execr, ${pkgs.alsa-utils}/bin/amixer set Master toggle"
-        ", XF86AudioMicMute,     execr, ${pkgs.alsa-utils}/bin/amixer set Capture toggle"
-        ", XF86AudioRaiseVolume, execr, ${pkgs.alsa-utils}/bin/amixer set Master 5%+"
-        ", XF86AudioLowerVolume, execr, ${pkgs.alsa-utils}/bin/amixer set Master 5%-"
+          ", XF86AudioMute,        execr, ${pkgs.alsa-utils}/bin/amixer set Master toggle"
+          ", XF86AudioMicMute,     execr, ${pkgs.alsa-utils}/bin/amixer set Capture toggle"
+          ", XF86AudioRaiseVolume, execr, ${pkgs.alsa-utils}/bin/amixer set Master 5%+"
+          ", XF86AudioLowerVolume, execr, ${pkgs.alsa-utils}/bin/amixer set Master 5%-"
 
-        ", XF86MonBrightnessUp,   execr, ${pkgs.brightnessctl}/bin/brightnessctl s 10%+"
-        ", XF86MonBrightnessDown, execr, ${pkgs.brightnessctl}/bin/brightnessctl s 10%-"
+          ", XF86MonBrightnessUp,   execr, ${pkgs.brightnessctl}/bin/brightnessctl s 10%+"
+          ", XF86MonBrightnessDown, execr, ${pkgs.brightnessctl}/bin/brightnessctl s 10%-"
 
-        ", XF86AudioPlay, execr, ${pkgs.playerctl}/bin/playerctl play"
-        ", XF86AudioStop, execr, ${pkgs.playerctl}/bin/playerctl stop"
-        ", XF86AudioNext, execr, ${pkgs.playerctl}/bin/playerctl previous"
-        ", XF86AudioPrev, execr, ${pkgs.playerctl}/bin/playerctl next"
+          ", XF86AudioPlay, execr, ${pkgs.playerctl}/bin/playerctl play"
+          ", XF86AudioStop, execr, ${pkgs.playerctl}/bin/playerctl stop"
+          ", XF86AudioNext, execr, ${pkgs.playerctl}/bin/playerctl previous"
+          ", XF86AudioPrev, execr, ${pkgs.playerctl}/bin/playerctl next"
 
-        ",      PRINT, execr, ${pkgs.unstable.hyprshot}/bin/hyprshot -m output --clipboard-only"
-        "CTRL,  PRINT, execr, ${pkgs.unstable.hyprshot}/bin/hyprshot -m window --clipboard-only"
-        "SHIFT, PRINT, execr, ${pkgs.unstable.hyprshot}/bin/hyprshot -m region --clipboard-only"
+          ",      PRINT, execr, ${pkgs.unstable.hyprshot}/bin/hyprshot -m output --clipboard-only"
+          "CTRL,  PRINT, execr, ${pkgs.unstable.hyprshot}/bin/hyprshot -m window --clipboard-only"
+          "SHIFT, PRINT, execr, ${pkgs.unstable.hyprshot}/bin/hyprshot -m region --clipboard-only"
 
-        ", F11, fullscreen"
-
-      ] ++ lib.flatten (
+          ", F11, fullscreen"
+        ]
+        ++ lib.flatten (
           (map generateWindowMovementLines windowMovementKeys)
           ++ map generateWorkspaceMovementLines (lib.range 1 10)
         );

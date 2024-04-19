@@ -7,7 +7,6 @@
 
   programs.ags = {
     enable = true;
-
     configDir = ../../external/ags;
   };
 

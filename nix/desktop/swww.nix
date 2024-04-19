@@ -11,7 +11,7 @@
       Type = "notify";
       ExecStart = "${pkgs.unstable.swww}/bin/swww-daemon";
     };
-  
-  Install.WantedBy = ["graphical-session.target"];
+
+    Install.WantedBy = ["graphical-session.target"];
   };
 }
