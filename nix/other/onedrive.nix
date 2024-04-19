@@ -25,6 +25,6 @@
       ExecStop = "${pkgs.fuse}/bin/fusermount -u %h/onedrive";
     };
 
-    Install.WantedBy = ["network-online.target"];
+    Install.WantedBy = ["default.target"];
   };
 }
