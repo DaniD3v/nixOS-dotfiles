@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  imports = [../other/rog-strix.nix];
+
   home.packages = with pkgs; [
     # jetbrains
     unstable.jetbrains.rust-rover
