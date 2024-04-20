@@ -3,7 +3,6 @@
 
 ## Fixes:
 - [ ] fix steam (works on old hyprland version -> find broken commit)
-- [ ] fix obs
 - [ ] fix bordergradient animation in hyprland
 - [ ] fix touchpad script
 
@@ -28,6 +27,7 @@
 - [ ] write ags widgets
 
 ## Completed (for motivational purposes)
+- [x] fix obs
 - [x] setup rofi
 - [x] replace hyprpaper with swww
 - [x] actually add asus stuff to make conditional
@@ -40,3 +40,4 @@
 - [x] add ags to flake
 - [x] rclone secrets
 - [x] move home packages to modules
+

@@ -60,10 +60,12 @@
 
   programs = {
     alacritty.enable = true;
-
     neovim.enable = true;
     fish.enable = true;
     git.enable = true;
     ssh.enable = true;
+
+    # requires pipewire.enable = true; in configuration.nix
+    obs-studio.enable = true;
   };
 }
