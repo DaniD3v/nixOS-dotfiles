@@ -14,7 +14,7 @@
     package = pkgs.unstable.hyprland;
 
     settings = {
-      env = "WLR_DRM_DEVICES,/dev/dri/card0";
+      env = "WLR_DRM_DEVICES,/dev/dri/card0:/dev/dri/card1";
 
       monitor = [
         "eDP-1,    highrr, 0x0, 1"
@@ -22,11 +22,12 @@
       ];
 
       exec-once = [
+        "${pkgs.systemd}/bin/systemctl --user start onedrive.service"
         "${pkgs.systemd}/bin/systemctl --user start swayidle.service"
         "${pkgs.systemd}/bin/systemctl --user start swww.service"
 
         "${pkgs.dunst}/bin/dunst"
-        "ags" # TODO
+        "${pkgs.unstable.ags}/bin/ags"
       ];
 
       exec = [
@@ -53,9 +54,9 @@
 
       general = {
         gaps_out = 10;
-
         border_size = 2;
-        "col.active_border" = "rgba(5f1d82ee) rgba(00c9a7ee) 45deg";
+
+        "col.active_border" = "rgba(5f1d82ee) rgba(5f1d82ee) rgba(5f1d82ee) rgba(00c9a7ee)";
         "col.inactive_border" = "rgba(595959aa)";
       };
 
@@ -66,23 +67,21 @@
           size = 8;
           passes = 2;
         };
-
-        shadow_range = 10;
-        "col.shadow" = "rgba(1a1a1aee)";
       };
 
       animation = {
         bezier = [
-          "myBezier, 0.05, 0.9, 0.1, 1.05"
+          "overshoot, 0.21, 0.82, 0.39, 1.3"
+          "overshoot-light, 0.21, 0.82, 0.39, 1.11"
+
+          "linear, 0, 0, 1, 1"
         ];
 
         animation = [
-          "windows,     1, 7,  myBezier"
-          "windowsOut,  1, 7,  default, popin 80%"
-          "border,      1, 10, default"
-          "borderangle, 1, 8,  default"
-          "fade,        1, 7,  default"
-          "workspaces,  1, 6,  default"
+          "windows,    1, 4, overshoot, popin 80%"
+
+          #"borderangle, 1, 10, linear, loop" # TODO fix unclean animation hyprland issue
+          "workspaces, 1, 6, overshoot-light"
         ];
       };
 
@@ -139,7 +138,7 @@
 
           # relative path for rofi
           "$mainMod, R, execr, ${pkgs.rofi-wayland}/bin/rofi -show-icons -show drun"
-          "$mainMod, O, execr, ${pkgs.swaylock}/bin/swaylock"
+          "$mainMod, O, execr, ${pkgs.swaylock-effects}/bin/swaylock"
 
           # using relaative path to match version
           "$mainMod, F, execr, ${pkgs.util-linux}/bin/kill -9 $(hyprctl activewindow | ${pkgs.gnugrep}/bin/grep -oP '(?<=pid: ()\\d*)')"
