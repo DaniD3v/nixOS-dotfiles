@@ -1,13 +1,18 @@
 
 # TODO:
 
+## Fixes:
+- [ ] fix steam (works on old hyprland version -> find broken commit)
+- [ ] fix obs
+- [ ] fix bordergradient animation in hyprland
+- [ ] fix touchpad script
+
 ## Easy:
 - [ ] update README to reflect new user-system changes
 
 ## Low-Effort:
 - [ ] try out hyprlock
-- [ ] replace hyprpaper with swww (hyprwinwrap + plugins)
-- [ ] setup rofi
+- [ ] try some hyprland plugins
 - [ ] setup backup with duplicity
 - [ ] impermanence + porting the remaining dotter stuff (because this will break it)
 - [ ] make the secret management optional
@@ -19,11 +24,13 @@
 - [ ] secret management (not world readable & install without secrets)
 - [ ] matugen integration
 - [ ] fix the neovim config (and port the existing one)
-- [ ] actually add asus stuff to make conditional
 - [ ] find/write a proper screenshot tool
 - [ ] write ags widgets
 
 ## Completed (for motivational purposes)
+- [x] setup rofi
+- [x] replace hyprpaper with swww
+- [x] actually add asus stuff to make conditional
 - [x] translate hyprland config to nix native one
 - [x] move dconf to theming category
 - [x] add username-dependant packages
