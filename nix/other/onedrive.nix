@@ -4,7 +4,7 @@
       Description = "Mounts Onedrive storage";
       Documentation = ["man:rclone(1)"];
 
-      Requires = ["network-online.target"];
+      After = ["network-online.target"];
     };
 
     Service = {
