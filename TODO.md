@@ -4,7 +4,6 @@
 ## Fixes:
 - [ ] fix steam (works on old hyprland version -> find broken commit)
 - [ ] fix bordergradient animation in hyprland
-- [ ] fix touchpad script
 
 ## Easy:
 - [ ] update README to reflect new user-system changes
@@ -25,8 +24,10 @@
 - [ ] fix the neovim config (and port the existing one)
 - [ ] find/write a proper screenshot tool
 - [ ] write ags widgets
+- [ ] proper Require = "network-online.target" on onedrive script
 
 ## Completed (for motivational purposes)
+- [x] fix touchpad script
 - [x] fix obs
 - [x] setup rofi
 - [x] replace hyprpaper with swww
