@@ -52,6 +52,7 @@
     git
 
     # CLI: additional
+    wl-clipboard
     alejandra
     fastfetch
     tokei
