@@ -1,8 +1,8 @@
 {
-  system,
-  username,
+  inputs,
   pkgs,
-  nixpkgs-unstable,
+  username,
+  system,
   ...
 }: let
   userConfig =
@@ -32,7 +32,7 @@ in {
     allowUnfree = true;
 
     packageOverrides = pkgs: {
-      unstable = import nixpkgs-unstable {
+      unstable = import inputs.nixpkgs-unstable {
         inherit system;
         config.allowUnfree = true;
       };
@@ -40,7 +40,7 @@ in {
   };
 
   home = {
-    username = "${username}";
+    username = username;
     homeDirectory = "/home/${username}";
 
     sessionPath = [".local/bin"];

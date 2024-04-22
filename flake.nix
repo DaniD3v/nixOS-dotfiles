@@ -10,8 +10,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
     matugen = {
       url = "github:/InioX/Matugen";
+      # url = "path:/home/notyou/devel/matugen";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -26,9 +32,10 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
+    hyprland,
     matugen,
     ags,
-  }: let
+  } @ inputs: let
     system = "x86_64-linux";
     username = "notyou";
   in {
@@ -38,7 +45,7 @@
       pkgs = import nixpkgs {inherit system;};
 
       extraSpecialArgs = {
-        inherit nixpkgs-unstable username system matugen ags;
+        inherit inputs username system;
       };
 
       modules = [./nix/home.nix];

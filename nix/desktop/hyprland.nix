@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   lib,
   ...
@@ -11,10 +12,10 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package = pkgs.unstable.hyprland;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
 
     settings = {
-      env = "WLR_DRM_DEVICES,/dev/dri/card0:/dev/dri/card1";
+      env = "WLR_DRM_DEVICES,/dev/dri/card0";
 
       monitor = [
         "eDP-1,    highrr, 0x0, 1"
@@ -181,15 +182,6 @@
   # Required packages for the config to work
   home.packages = with pkgs; [
     unstable.swww
-    rofi-wayland
     dunst
-
-    brightnessctl
-    playerctl
-
-    # screenshots
-    wl-clipboard
-    slurp
-    grim
   ];
 }
