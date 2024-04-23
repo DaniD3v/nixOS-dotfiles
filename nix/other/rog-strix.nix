@@ -6,7 +6,6 @@
     ", XF86Launch3, execr, ${pkgs.asusctl}/bin/asusctl led-mode -n"
     ", XF86Launch4, execr, ${pkgs.asusctl}/bin/asusctl profile -n"
 
-    # https://github.com/hyprwm/Hyprland/issues/5645
-    # ", XF86TouchpadToggle, execr, ${../../scripts/toggle_touchpad}"
+    ", XF86TouchpadToggle, execr, ${../../scripts/toggle_touchpad}"
   ];
 }
