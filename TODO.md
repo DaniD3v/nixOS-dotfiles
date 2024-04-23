@@ -2,7 +2,7 @@
 # TODO:
 
 ## Fixes:
-- [ ] fix steam (works on old hyprland version -> find broken commit)
+- [ ] fix steam (works on old hyprland version -> wait for unstable to fix)
 - [ ] fix bordergradient animation in hyprland. [github issue](https://github.com/hyprwm/Hyprland/issues/5693)
 
 ## Easy:
