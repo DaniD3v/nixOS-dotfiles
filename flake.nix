@@ -10,11 +10,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-
     matugen = {
       url = "github:/InioX/Matugen";
       # url = "path:/home/notyou/devel/matugen";
@@ -32,7 +27,6 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
-    hyprland,
     matugen,
     ags,
   } @ inputs: let

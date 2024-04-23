@@ -1,5 +1,4 @@
 {
-  inputs,
   pkgs,
   lib,
   ...
@@ -12,7 +11,7 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    package = pkgs.unstable.hyprland;
 
     settings = {
       env = "WLR_DRM_DEVICES,/dev/dri/card0";
