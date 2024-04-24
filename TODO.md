@@ -22,7 +22,7 @@
 ## High-Effort
 - [ ] secret management (not world readable & install without secrets)
 - [ ] matugen integration
-- [ ] fix the neovim config (and port the existing one)
+- [ ] Port the neovim config
 - [ ] find/write a proper screenshot tool
 - [ ] write ags widgets
 - [ ] proper Require = "network-online.target" on onedrive script
