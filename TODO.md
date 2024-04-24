@@ -4,6 +4,7 @@
 ## Fixes:
 - [ ] fix steam (works on old hyprland version -> wait for unstable to fix)
 - [ ] fix bordergradient animation in hyprland. [github issue](https://github.com/hyprwm/Hyprland/issues/5693)
+- [ ] fix hyprshot ouptput mode
 
 ## Easy:
 - [ ] update README to reflect new user-system changes
