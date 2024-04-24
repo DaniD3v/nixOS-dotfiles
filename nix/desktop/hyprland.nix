@@ -157,8 +157,8 @@
 
           ", XF86AudioPlay, execr, ${pkgs.playerctl}/bin/playerctl play"
           ", XF86AudioStop, execr, ${pkgs.playerctl}/bin/playerctl stop"
-          ", XF86AudioNext, execr, ${pkgs.playerctl}/bin/playerctl previous"
-          ", XF86AudioPrev, execr, ${pkgs.playerctl}/bin/playerctl next"
+          ", XF86AudioNext, execr, ${pkgs.playerctl}/bin/playerctl next"
+          ", XF86AudioPrev, execr, ${pkgs.playerctl}/bin/playerctl previous"
 
           ",      PRINT, execr, ${pkgs.unstable.hyprshot}/bin/hyprshot -m output --clipboard-only"
           "CTRL,  PRINT, execr, ${pkgs.unstable.hyprshot}/bin/hyprshot -m window --clipboard-only"
