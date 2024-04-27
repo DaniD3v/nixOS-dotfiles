@@ -141,7 +141,7 @@
           "$mainMod, O, execr, ${pkgs.swaylock-effects}/bin/swaylock"
 
           # using relaative path to match version
-          "$mainMod, F, execr, ${pkgs.util-linux}/bin/kill -9 $(hyprctl activewindow | ${pkgs.gnugrep}/bin/grep -oP '(?<=pid: ()\\d*)')"
+          "$mainMod, F, execr, ${pkgs.util-linux}/bin/kill -9 $(hyprctl activewindow | ${pkgs.gnugrep}/bin/grep -oP '(?<=pid: )\\d+')"
           "$mainMod, C, killactive"
           "$mainMod, V, togglefloating"
           "$mainMod, U, togglesplit"
