@@ -5,6 +5,7 @@
 - [ ] fix steam (works on old hyprland version -> wait for unstable to fix)
 - [ ] fix bordergradient animation in hyprland. [github issue](https://github.com/hyprwm/Hyprland/issues/5693)
 - [ ] fix hyprshot ouptput mode
+- [ ] fix shutdown process locking
 
 ## Easy:
 - [ ] update README to reflect new user-system changes
@@ -22,12 +23,13 @@
 ## High-Effort
 - [ ] secret management (not world readable & install without secrets)
 - [ ] matugen integration
-- [ ] Port the neovim config
+- [ ] improve neovim config
 - [ ] find/write a proper screenshot tool
 - [ ] write ags widgets
 - [ ] proper Require = "network-online.target" on onedrive script
 
 ## Completed (for motivational purposes)
+- [x] Port the neovim config
 - [x] fix touchpad script
 - [x] fix obs
 - [x] setup rofi
