@@ -4,11 +4,11 @@
 ## Fixes:
 - [ ] fix steam (works on old hyprland version -> wait for unstable to fix)
 - [ ] fix bordergradient animation in hyprland. [github issue](https://github.com/hyprwm/Hyprland/issues/5693)
-- [ ] fix hyprshot ouptput mode
-- [ ] fix shutdown process locking
+- [ ] fix shutdown process locking (fixed?)
 
 ## Easy:
 - [ ] update README to reflect new user-system changes
+- [ ] proper bitwarden setup with bitwarden-rofi and pinentry
 
 ## Low-Effort:
 - [ ] try out hyprlock
@@ -29,6 +29,7 @@
 - [ ] proper Require = "network-online.target" on onedrive script
 
 ## Completed (for motivational purposes)
+- [x] fix hyprshot ouptput mode
 - [x] Port the neovim config
 - [x] fix touchpad script
 - [x] fix obs

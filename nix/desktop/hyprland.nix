@@ -35,7 +35,8 @@
       ];
 
       windowrule = [
-        "suppressevent maximize, class:^(libreoffice.*)$"
+        # disabled while I have to swap between stable & unstable Hyprand
+        # "suppressevent maximize, class:^(libreoffice.*)$"
 
         "fullscreen,             Minecraft."
         "tile,                   title:(Burp Suite Community Edition.)"
@@ -160,7 +161,7 @@
           ", XF86AudioNext, execr, ${pkgs.playerctl}/bin/playerctl next"
           ", XF86AudioPrev, execr, ${pkgs.playerctl}/bin/playerctl previous"
 
-          ",      PRINT, execr, ${pkgs.unstable.hyprshot}/bin/hyprshot -m output --clipboard-only"
+          ",      PRINT, execr, ${pkgs.unstable.hyprshot}/bin/hyprshot -m output --current --clipboard-only"
           "CTRL,  PRINT, execr, ${pkgs.unstable.hyprshot}/bin/hyprshot -m window --clipboard-only"
           "SHIFT, PRINT, execr, ${pkgs.unstable.hyprshot}/bin/hyprshot -m region --clipboard-only"
 
