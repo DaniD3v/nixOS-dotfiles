@@ -50,6 +50,10 @@
       set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
     '';
 
+    extraLuaConfig = ''
+      require("nvim-autopairs").setup()
+    '';
+
     extraPackages = with pkgs; [
       # TODO install lsps directly
       cargo # Mason expects cargo
