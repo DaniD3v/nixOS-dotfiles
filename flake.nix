@@ -10,6 +10,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     matugen = {
       url = "github:/InioX/Matugen";
       # url = "path:/home/notyou/devel/matugen";
@@ -27,6 +32,7 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
+    firefox-addons,
     matugen,
     ags,
   } @ inputs: let

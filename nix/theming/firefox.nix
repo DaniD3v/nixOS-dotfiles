@@ -3,9 +3,8 @@
   config,
   ...
 }:
-with pkgs;
-with python3Packages; let
-  pywalfox = buildPythonPackage {
+with pkgs; let
+  pywalfox = python3Packages.buildPythonPackage {
     pname = "pywalfox";
     version = "2.8.0rc1";
 
@@ -18,6 +17,10 @@ with python3Packages; let
   };
 in {
   home.packages = [pywalfox];
+
+  programs.firefox.profiles."notyou".extensions = [
+    inputs.firefox-addons.pywalfox
+  ];
 
   programs.matugen.templates.firefox = {
     input_path = ../../external/templates/colors.json;
