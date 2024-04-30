@@ -9,6 +9,7 @@
 ## Easy:
 - [ ] update README to reflect new user-system changes
 - [ ] proper bitwarden setup with bitwarden-rofi and pinentry
+- [ ] save WLAN connections as secrets
 
 ## Low-Effort:
 - [ ] try out hyprlock
