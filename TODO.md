@@ -4,7 +4,7 @@
 ## Fixes:
 - [ ] fix steam (works on old hyprland version -> wait for unstable to fix)
 - [ ] fix bordergradient animation in hyprland. [github issue](https://github.com/hyprwm/Hyprland/issues/5693)
-- [ ] fix shutdown process locking (fixed?)
+- [ ] fix pywalfox extension not working [gitlab issue](https://gitlab.com/rycee/nur-expressions/-/issues/217)
 
 ## Easy:
 - [ ] update README to reflect new user-system changes
