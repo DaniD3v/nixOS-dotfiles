@@ -10,6 +10,8 @@
 - [ ] update README to reflect new user-system changes
 - [ ] proper bitwarden setup with bitwarden-rofi and pinentry
 - [ ] save WLAN connections as secrets
+- [ ] pass ./activate script flags to home-manager switch
+- [ ] remove system variable in flake.nix -> flake-utils
 
 ## Low-Effort:
 - [ ] try out hyprlock
