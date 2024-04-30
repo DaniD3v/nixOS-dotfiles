@@ -30,6 +30,7 @@
     shellAliases = {
       nmwifi = "${pkgs.networkmanager}/bin/nmcli device wifi";
       nmcn = "${pkgs.networkmanager}/bin/nmcli device wifi connect";
+      btdcn = "${pkgs.bluez}/bin/bluetoothctl disconnect";
       btcn = "${pkgs.bluez}/bin/bluetoothctl connect";
 
       with-pkg = "${pkgs.nix}/bin/nix-shell --run fish -p";
