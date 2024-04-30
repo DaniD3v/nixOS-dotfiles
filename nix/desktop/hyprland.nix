@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }: {
   imports = [
@@ -9,7 +10,7 @@
     ./ags.nix
   ];
 
-  wayland.windowManager.hyprland = {
+  wayland.windowManager.hyprland = rec {
     enable = true;
     package = pkgs.unstable.hyprland;
 
@@ -133,7 +134,7 @@
           "$mainMod, D, execr, ${pkgs.alacritty}/bin/alacritty"
           "$mainMod, W, execr, ${pkgs.alacritty}/bin/alacritty $EDITOR"
           "$mainMod, E, execr, ${pkgs.gnome.nautilus}/bin/nautilus -w"
-          "$mainMod, Q, execr, ${pkgs.firefox}/bin/firefox"
+          "$mainMod, Q, execr, ${config.programs.firefox.package}/bin/firefox"
           "$mainMod, A, execr, ${pkgs.gnome.gnome-calculator}/bin/gnome-calculator"
           "$mainMod, N, execr, ${pkgs.gnome-text-editor}/bin/gnome-text-editor"
 
@@ -141,8 +142,7 @@
           "$mainMod, R, execr, ${pkgs.rofi-wayland}/bin/rofi -show-icons -show drun"
           "$mainMod, O, execr, ${pkgs.swaylock-effects}/bin/swaylock"
 
-          # using relaative path to match version
-          "$mainMod, F, execr, ${pkgs.util-linux}/bin/kill -9 $(hyprctl activewindow | ${pkgs.gnugrep}/bin/grep -oP '(?<=pid: )\\d+')"
+          "$mainMod, F, execr, ${pkgs.util-linux}/bin/kill -9 $(${package}/bin/hyprctl activewindow | ${pkgs.gnugrep}/bin/grep -oP '(?<=pid: )\\d+')"
           "$mainMod, C, killactive"
           "$mainMod, V, togglefloating"
           "$mainMod, U, togglesplit"
