@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   config,
   ...
@@ -18,8 +19,8 @@ with pkgs; let
 in {
   home.packages = [pywalfox];
 
-  programs.firefox.profiles."notyou".extensions = [
-    inputs.firefox-addons.pywalfox
+  programs.firefox.profiles."default".extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
+    pywalfox
   ];
 
   programs.matugen.templates.firefox = {

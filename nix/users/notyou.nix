@@ -17,7 +17,6 @@
     libreoffice
     apostrophe
     gnome.eog
-    firefox
     warp
 
     # OS GUI: additional
@@ -61,6 +60,7 @@
 
   programs = {
     alacritty.enable = true;
+    firefox.enable = true;
     neovim.enable = true;
     fish.enable = true;
     git.enable = true;
