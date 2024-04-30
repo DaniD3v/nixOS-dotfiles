@@ -52,8 +52,10 @@
 
     # CLI: additional
     wl-clipboard
+    pulsemixer
     alejandra
     fastfetch
+    rustic-rs
     tokei
     btop
   ];
