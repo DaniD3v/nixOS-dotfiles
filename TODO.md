@@ -16,14 +16,13 @@
 ## Low-Effort:
 - [ ] try out hyprlock
 - [ ] try some hyprland plugins
-- [ ] setup backup with duplicity
-- [ ] impermanence + porting the remaining dotter stuff (because this will break it)
-- [ ] make the secret management optional
-- [ ] add install script that auto-fills username
+- [ ] setup backup with rustic-rs
+- [ ] auto-fill username in ./activate script
 - [ ] git pgp signatures
 - [ ] rewrite nix-which script
 
 ## High-Effort
+- [ ] impermanence
 - [ ] secret management (not world readable & install without secrets)
 - [ ] matugen integration
 - [ ] improve neovim config
