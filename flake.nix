@@ -37,18 +37,17 @@
     ags,
   } @ inputs: let
     system = "x86_64-linux";
-    username = "notyou";
+    username = import ./username.nix;
   in {
     packages.${system}.default = home-manager.defaultPackage.${system};
 
     homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
       pkgs = import nixpkgs {inherit system;};
+      modules = [./nix/home.nix];
 
       extraSpecialArgs = {
         inherit inputs username system;
       };
-
-      modules = [./nix/home.nix];
     };
   };
 }
