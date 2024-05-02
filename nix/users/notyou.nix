@@ -53,6 +53,7 @@
     # CLI: additional
     wl-clipboard
     pulsemixer
+    shellcheck
     alejandra
     fastfetch
     rustic-rs
