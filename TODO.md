@@ -2,35 +2,37 @@
 # TODO:
 
 ## Fixes:
-- [ ] fix steam (works on old hyprland version -> wait for unstable to fix)
+- [ ] fix steam (mesa version mismatch?)
 - [ ] fix bordergradient animation in hyprland. [github issue](https://github.com/hyprwm/Hyprland/issues/5693)
 - [ ] fix pywalfox extension not working [gitlab issue](https://gitlab.com/rycee/nur-expressions/-/issues/217)
+- [ ] fix dconf
 
 ## Easy:
 - [ ] update README to reflect new user-system changes
-- [ ] proper bitwarden setup with bitwarden-rofi and pinentry
-- [ ] save WLAN connections as secrets
-- [ ] pass ./activate script flags to home-manager switch
 - [ ] remove system variable in flake.nix -> flake-utils
 
 ## Low-Effort:
+- [ ] proper bitwarden setup with bitwarden-rofi and pinentry
+- [ ] rewrite nix-which script
 - [ ] try out hyprlock
 - [ ] try some hyprland plugins
 - [ ] setup backup with rustic-rs
-- [ ] auto-fill username in ./activate script
 - [ ] git pgp signatures
-- [ ] rewrite nix-which script
+- [ ] save WLAN connections as secrets
 
 ## High-Effort
-- [ ] impermanence
-- [ ] secret management (not world readable & install without secrets)
+- [ ] proper matugen hm-module [github PR](https://github.com/InioX/matugen/pull/68)
 - [ ] matugen integration
 - [ ] improve neovim config
+- [ ] impermanence
+- [ ] secret management (not world readable & install without secrets)
 - [ ] find/write a proper screenshot tool
 - [ ] write ags widgets
 - [ ] proper Require = "network-online.target" on onedrive script
 
 ## Completed (for motivational purposes)
+- [x] auto-fill username in ./activate script
+- [x] pass ./activate script flags to home-manager switch
 - [x] fix hyprshot ouptput mode
 - [x] Port the neovim config
 - [x] fix touchpad script
