@@ -19,13 +19,16 @@ with pkgs; let
 in {
   home.packages = [pywalfox];
 
-  programs.firefox.profiles."default" = {
-    settings.extensions.autoDisableScopes = 0;
+  # Disabled while this is broken
+  # (don't want to replace my profiles.ini)
 
-    extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
-      pywalfox
-    ];
-  };
+  #programs.firefox.profiles."default" = {
+  #  settings.extensions.autoDisableScopes = 0;
+
+  #  extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
+  #    pywalfox
+  #  ];
+  #};
 
   programs.matugen.templates.firefox = {
     input_path = ../../external/templates/colors.json;
