@@ -178,10 +178,4 @@
       ];
     };
   };
-
-  # Required packages for the config to work
-  home.packages = with pkgs; [
-    unstable.swww
-    dunst
-  ];
 }
