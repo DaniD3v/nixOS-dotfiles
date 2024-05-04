@@ -7,13 +7,16 @@
 - [ ] fix pywalfox extension not working [gitlab issue](https://gitlab.com/rycee/nur-expressions/-/issues/217)
 - [ ] fix dconf
 
+## Code-Quality:
+- [ ] remove system variable in flake.nix -> flake-utils
+- [ ] make flake packages accessible with packageOverrides
+- [ ] rewrite nix-which script
+
 ## Easy:
 - [ ] update README to reflect new user-system changes
-- [ ] remove system variable in flake.nix -> flake-utils
 
 ## Low-Effort:
 - [ ] proper bitwarden setup with bitwarden-rofi and pinentry
-- [ ] rewrite nix-which script
 - [ ] try out hyprlock
 - [ ] try some hyprland plugins
 - [ ] setup backup with rustic-rs
