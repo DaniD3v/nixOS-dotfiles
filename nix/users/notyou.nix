@@ -35,6 +35,7 @@
       withOpenASAR = true;
       withVencord = true;
     })
+    unstable.postman
     teams-for-linux
     prismlauncher
     burpsuite
