@@ -132,7 +132,7 @@
       in
         [
           "$mainMod, D, execr, ${pkgs.alacritty}/bin/alacritty"
-          "$mainMod, W, execr, ${pkgs.alacritty}/bin/alacritty $EDITOR"
+          "$mainMod, W, execr, ${pkgs.alacritty}/bin/alacritty -e $EDITOR"
           "$mainMod, E, execr, ${pkgs.gnome.nautilus}/bin/nautilus -w"
           "$mainMod, Q, execr, ${config.programs.firefox.package}/bin/firefox"
           "$mainMod, A, execr, ${pkgs.gnome.gnome-calculator}/bin/gnome-calculator"
