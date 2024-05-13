@@ -2,10 +2,10 @@
 # TODO:
 
 ## Fixes:
-- [ ] fix steam (mesa version mismatch?)
+- [ ] fix steam/hyprland (mesa version mismatch?)
 - [ ] fix bordergradient animation in hyprland. [github issue](https://github.com/hyprwm/Hyprland/issues/5693)
 - [ ] fix pywalfox extension not working [gitlab issue](https://gitlab.com/rycee/nur-expressions/-/issues/217)
-- [ ] fix dconf
+- [ ] fix home.sessionPath [github issue](https://github.com/nix-community/home-manager/issues/3417)
 
 ## Code-Quality:
 - [ ] remove system variable in flake.nix -> flake-utils

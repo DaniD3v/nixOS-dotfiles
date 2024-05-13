@@ -48,7 +48,7 @@
     interactiveShellInit = ''
       set fish_greeting
       bind \b backward-kill-word
-      fish_add_path ~/.local/bin
+      fish_add_path ~/.local/bin  # TODO workaround because home.sessionPath isn't working.
     '';
   };
 }
