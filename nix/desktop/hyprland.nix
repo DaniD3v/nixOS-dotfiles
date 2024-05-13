@@ -129,6 +129,8 @@
           "$mainMod, ${key}, workspace, ${toString workspace}"
           "$mainMod SHIFT, ${key}, movetoworkspace, ${toString workspace}"
         ];
+
+        hyprshot-command = "${pkgs.unstable.hyprshot}/bin/hyprshot -o /tmp -f screenshot";
       in
         [
           "$mainMod, D, execr, ${pkgs.alacritty}/bin/alacritty"
@@ -137,6 +139,7 @@
           "$mainMod, Q, execr, ${config.programs.firefox.package}/bin/firefox"
           "$mainMod, A, execr, ${pkgs.gnome.gnome-calculator}/bin/gnome-calculator"
           "$mainMod, N, execr, ${pkgs.gnome-text-editor}/bin/gnome-text-editor"
+          "$mainMod, I, execr, ${pkgs.gnome.eog}/bin/eog /tmp/screenshot"
 
           # relative path for rofi
           "$mainMod, R, execr, ${pkgs.rofi-wayland}/bin/rofi -show-icons -show drun"
@@ -161,9 +164,9 @@
           ", XF86AudioNext, execr, ${pkgs.playerctl}/bin/playerctl next"
           ", XF86AudioPrev, execr, ${pkgs.playerctl}/bin/playerctl previous"
 
-          ",      PRINT, execr, ${pkgs.unstable.hyprshot}/bin/hyprshot -m output --current --clipboard-only"
-          "CTRL,  PRINT, execr, ${pkgs.unstable.hyprshot}/bin/hyprshot -m window --clipboard-only"
-          "SHIFT, PRINT, execr, ${pkgs.unstable.hyprshot}/bin/hyprshot -m region --clipboard-only"
+          ",      PRINT, execr, ${hyprshot-command} -m output --current"
+          "CTRL,  PRINT, execr, ${hyprshot-command} -m window"
+          "SHIFT, PRINT, execr, ${hyprshot-command} -m region"
 
           ", F11, fullscreen"
         ]
