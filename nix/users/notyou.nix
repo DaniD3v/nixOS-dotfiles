@@ -26,6 +26,7 @@
     gnome.gnome-clocks
     unstable.dialect
     gnome.totem
+    unstable.textpieces
     fragments
     diebahn
     baobab
@@ -35,7 +36,6 @@
       withOpenASAR = true;
       withVencord = true;
     })
-    unstable.postman
     teams-for-linux
     prismlauncher
     burpsuite
@@ -46,20 +46,25 @@
     gimp
 
     # CLI: essential
+    wl-clipboard
+    shellcheck
+    alejandra
+    rustic-rs
+    nix-tree
     python3
     rustup
+    tokei
+    btop
     nmap
     git
 
     # CLI: additional
-    wl-clipboard
     pulsemixer
-    shellcheck
-    alejandra
     fastfetch
-    rustic-rs
-    tokei
-    btop
+    textplots
+    rustcat
+    udict
+    tlrc
   ];
 
   programs = {
