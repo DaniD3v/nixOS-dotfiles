@@ -11,6 +11,8 @@
 - [ ] remove system variable in flake.nix -> flake-utils
 - [ ] make flake packages accessible with packageOverrides
 - [ ] rewrite nix-which script
+- [ ] find good linter & fix all errrors [linter list](https://discourse.nixos.org/t/list-of-nix-linters/19279)
+- [ ] make default.nix files and import all the paths in there.
 
 ## Easy:
 - [ ] update README to reflect new user-system changes
