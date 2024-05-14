@@ -28,13 +28,9 @@
   };
 
   outputs = {
-    self,
     nixpkgs,
-    nixpkgs-unstable,
     home-manager,
-    firefox-addons,
-    matugen,
-    ags,
+    ...
   } @ inputs: let
     system = "x86_64-linux";
     username = import ./username.nix;

@@ -1,6 +1,5 @@
 {
   inputs,
-  pkgs,
   username,
   system,
   ...
@@ -31,7 +30,7 @@ in {
   nixpkgs.config = {
     allowUnfree = true;
 
-    packageOverrides = pkgs: {
+    packageOverrides = _: {
       unstable = import inputs.nixpkgs-unstable {
         inherit system;
         config.allowUnfree = true;
