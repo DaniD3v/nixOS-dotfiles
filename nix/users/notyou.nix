@@ -48,11 +48,8 @@
     # CLI: essential
     wl-clipboard
     shellcheck
-    alejandra
     rustic-rs
-    nix-tree
     python3
-    statix
     rustup
     tokei
     btop
@@ -66,6 +63,12 @@
     rustcat
     udict
     tlrc
+
+    # nix related
+    alejandra
+    nix-tree
+    deadnix
+    statix
   ];
 
   programs = {
