@@ -13,6 +13,8 @@
 - [ ] rewrite nix-which script
 - [ ] find good linter & fix all errrors [linter list](https://discourse.nixos.org/t/list-of-nix-linters/19279)
 - [ ] make default.nix files and import all the paths in there.
+- [ ] make bitwarden a module with configurable email.
+- [ ] remove the email address from the git module/ define it in users/notyou.nix
 
 ## Easy:
 - [ ] update README to reflect new user-system changes
