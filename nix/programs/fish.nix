@@ -3,27 +3,27 @@
     plugins = with pkgs.fishPlugins; [
       {
         name = "z";
-        src = z.src;
+        inherit (z) src;
       } # fuzzy cd
       {
         name = "tide";
-        src = tide.src;
+        inherit (tide) src;
       } # prompt
       {
         name = "done";
-        src = done.src;
+        inherit (done) src;
       } # notification after long commands
       {
         name = "sponge";
-        src = sponge.src;
+        inherit (sponge) src;
       } # removes failed commands from history
       {
         name = "puffer";
-        src = puffer.src;
+        inherit (puffer) src;
       } # '...' -> '../..' and '!!' -> <previous command>
       {
         name = "autopair";
-        src = autopair.src;
+        inherit (autopair) src;
       }
     ];
 

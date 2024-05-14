@@ -11,7 +11,6 @@
 - [ ] remove system variable in flake.nix -> flake-utils
 - [ ] make flake packages accessible with packageOverrides
 - [ ] rewrite nix-which script
-- [ ] find good linter & fix all errrors [linter list](https://discourse.nixos.org/t/list-of-nix-linters/19279)
 - [ ] make default.nix files and import all the paths in there.
 - [ ] make bitwarden a module with configurable email.
 - [ ] remove the email address from the git module/ define it in users/notyou.nix
@@ -38,6 +37,7 @@
 - [ ] proper Require = "network-online.target" on onedrive script
 
 ## Completed (for motivational purposes)
+- [x] find good linter & fix all errrors [linter list](https://discourse.nixos.org/t/list-of-nix-linters/19279)
 - [x] auto-fill username in ./activate script
 - [x] pass ./activate script flags to home-manager switch
 - [x] fix hyprshot ouptput mode

@@ -1,4 +1,4 @@
-{...}: {
+_: {
   programs.ssh = {
     matchBlocks = {
       "aur.archlinux.org" = {

@@ -52,6 +52,7 @@
     rustic-rs
     nix-tree
     python3
+    statix
     rustup
     tokei
     btop
