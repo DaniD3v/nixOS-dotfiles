@@ -57,6 +57,7 @@
     git
 
     # CLI: additional
+    cargo-expand
     pulsemixer
     fastfetch
     textplots
