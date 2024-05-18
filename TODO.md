@@ -21,6 +21,7 @@
 
 ## Low-Effort:
 - [ ] proper bitwarden setup with bitwarden-rofi and pinentry
+- [ ] biblata cursors
 - [ ] try out hyprlock
 - [ ] try some hyprland plugins
 - [ ] setup backup with rustic-rs
