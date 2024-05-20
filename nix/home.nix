@@ -24,6 +24,7 @@ in {
       ./theming/gtk.nix
 
       ./other/onedrive.nix
+      ./other/cargo.nix
     ]
     ++ userConfig;
 
