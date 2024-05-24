@@ -140,6 +140,7 @@
           "$mainMod, A, execr, ${pkgs.gnome.gnome-calculator}/bin/gnome-calculator"
           "$mainMod, N, execr, ${pkgs.gnome-text-editor}/bin/gnome-text-editor"
           "$mainMod, I, execr, ${pkgs.gnome.eog}/bin/eog /tmp/screenshot"
+          "$mainMod, P, execr, ~/local/wal ~/wallpaper/$(${pkgs.coreutils}/bin/ls ~/wallpaper | ${pkgs.rofi-wayland}/bin/rofi -dmenu)"
 
           # relative path for rofi
           "$mainMod, R, execr, ${pkgs.rofi-wayland}/bin/rofi -show-icons -show drun"
