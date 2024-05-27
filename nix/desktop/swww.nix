@@ -1,5 +1,5 @@
 {pkgs, ...}: let
-  package = pkgs.unstable.swww;
+  package = pkgs.swww;
 in {
   home.packages = [package];
 

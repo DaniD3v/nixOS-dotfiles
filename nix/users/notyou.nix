@@ -4,19 +4,19 @@
   home.packages = with pkgs; [
     # jetbrains
     unstable.jetbrains.rust-rover
-    unstable.android-studio
     jetbrains.pycharm-professional
     jetbrains.idea-ultimate
     jetbrains.webstorm
     jetbrains.datagrip
+    android-studio
 
     # OS GUI: essential
     gnome-text-editor
-    unstable.errands
     gnome.nautilus
     libreoffice
     apostrophe
     gnome.eog
+    errands
     warp
 
     # OS GUI: additional
@@ -24,11 +24,11 @@
     gnome.gnome-characters
     gnome.gnome-calculator
     gnome.gnome-clocks
-    unstable.dialect
     gnome.totem
-    unstable.textpieces
+    textpieces
     fragments
     diebahn
+    dialect
     baobab
 
     # Applications
@@ -39,7 +39,7 @@
     teams-for-linux
     prismlauncher
     burpsuite
-    geogebra6
+    # geogebra6
     qFlipper
     blender
     spotify

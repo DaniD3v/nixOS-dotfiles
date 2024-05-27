@@ -12,11 +12,9 @@
 
   wayland.windowManager.hyprland = rec {
     enable = true;
-    package = pkgs.unstable.hyprland;
+    package = pkgs.hyprland;
 
     settings = {
-      env = "WLR_DRM_DEVICES,/dev/dri/card0";
-
       monitor = [
         "eDP-1,    highrr, 0x0, 1"
         "HDMI-A-1, highrr, 0x0, 1, mirror, eDP-1"
@@ -28,7 +26,7 @@
         "${pkgs.systemd}/bin/systemctl --user start swww.service"
 
         "${pkgs.dunst}/bin/dunst"
-        "${pkgs.unstable.ags}/bin/ags"
+        "${pkgs.ags}/bin/ags"
       ];
 
       exec = [
@@ -36,9 +34,7 @@
       ];
 
       windowrule = [
-        # disabled while I have to swap between stable & unstable Hyprand
-        # "suppressevent maximize, class:^(libreoffice.*)$"
-
+        "suppressevent maximize, class:^(libreoffice.*)$"
         "fullscreen,             Minecraft."
         "tile,                   title:(Burp Suite Community Edition.)"
         "float,                  Calculator"
@@ -130,7 +126,7 @@
           "$mainMod SHIFT, ${key}, movetoworkspace, ${toString workspace}"
         ];
 
-        hyprshot-command = "${pkgs.unstable.hyprshot}/bin/hyprshot -o /tmp -f screenshot";
+        hyprshot-command = "${pkgs.hyprshot}/bin/hyprshot -o /tmp -f screenshot";
       in
         [
           "$mainMod, D, execr, ${pkgs.alacritty}/bin/alacritty"
