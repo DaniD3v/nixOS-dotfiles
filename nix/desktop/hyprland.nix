@@ -10,9 +10,8 @@
     ./ags.nix
   ];
 
-  wayland.windowManager.hyprland = rec {
+  wayland.windowManager.hyprland = {
     enable = true;
-    package = pkgs.hyprland;
 
     settings = {
       monitor = [
@@ -142,7 +141,7 @@
           "$mainMod, R, execr, ${pkgs.rofi-wayland}/bin/rofi -show-icons -show drun"
           "$mainMod, O, execr, ${pkgs.swaylock-effects}/bin/swaylock"
 
-          "$mainMod, F, execr, ${pkgs.util-linux}/bin/kill -9 $(${package}/bin/hyprctl activewindow | ${pkgs.gnugrep}/bin/grep -oP '(?<=pid: )\\d+')"
+          "$mainMod, F, execr, ${pkgs.util-linux}/bin/kill -9 $(${config.wayland.windowManager.hyprland.package}/bin/hyprctl activewindow | ${pkgs.gnugrep}/bin/grep -oP '(?<=pid: )\\d+')"
           "$mainMod, C, killactive"
           "$mainMod, V, togglefloating"
           "$mainMod, U, togglesplit"

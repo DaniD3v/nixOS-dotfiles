@@ -16,7 +16,7 @@
     };
 
     matugen = {
-      url = "github:/InioX/Matugen";
+      url = "github:InioX/Matugen";
       # url = "path:/home/notyou/devel/matugen";
       inputs.nixpkgs.follows = "nixpkgs";
     };
