@@ -57,6 +57,7 @@
     git
 
     # CLI: additional
+    silver-searcher # this is ag
     cargo-expand
     pulsemixer
     fastfetch
