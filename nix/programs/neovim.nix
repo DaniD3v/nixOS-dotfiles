@@ -56,7 +56,6 @@
 
     extraPackages = with pkgs; [
       # TODO install lsps directly
-      cargo # Mason expects cargo
     ];
   };
 }

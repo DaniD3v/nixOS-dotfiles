@@ -14,8 +14,8 @@
     gnome-text-editor
     gnome.nautilus
     libreoffice
-    apostrophe
     gnome.eog
+    marktext
     errands
     warp
 
