@@ -39,7 +39,7 @@
     teams-for-linux
     prismlauncher
     burpsuite
-    # geogebra6
+    geogebra6
     qFlipper
     blender
     spotify
