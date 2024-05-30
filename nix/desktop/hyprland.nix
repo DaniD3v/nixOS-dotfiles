@@ -16,8 +16,20 @@
     settings = {
       monitor = [
         "eDP-1,    highrr, 0x0, 1"
-        "HDMI-A-1, highrr, 0x0, 1, mirror, eDP-1"
+
+        # "HDMI-A-1, highrr, 0x0, 1, mirror, eDP-1" # clone monitor
+        "HDMI-A-1, highrr, auto-up, 1" # second monitor
       ];
+
+      workspace = let
+        # workspaces 1-9 always select monitor eDP-1 except if
+        # HDMI-A-1 created a window on that workspace
+        use_edp1 = workspace: "${toString workspace}, monitor:eDP-1";
+      in
+        [
+          "10, monitor:HDMI-A-1, default:true"
+        ]
+        ++ lib.flatten (map use_edp1 (lib.range 1 9));
 
       exec-once = [
         "${pkgs.systemd}/bin/systemctl --user start onedrive.service"
@@ -128,6 +140,9 @@
         hyprshot-command = "${pkgs.hyprshot}/bin/hyprshot -o /tmp -f screenshot";
       in
         [
+          "$mainMod, bracketleft, movecurrentworkspacetomonitor, eDP-1"
+          "$mainMod, bracketright, movecurrentworkspacetomonitor, HDMI-A-1"
+
           "$mainMod, D, execr, ${pkgs.alacritty}/bin/alacritty"
           "$mainMod, W, execr, ${pkgs.alacritty}/bin/alacritty -e $EDITOR"
           "$mainMod, E, execr, ${pkgs.gnome.nautilus}/bin/nautilus -w"

@@ -19,7 +19,6 @@
 
 - [ ] update README to reflect new user-system changesA
 - [ ] add custom tiling with dwindle layout [docs](https://wiki.hyprland.org/Configuring/Dwindle-Layout/)
-- [ ] configure 2 monitor setup
 - [ ] make it possible to switch from mirroring/2nd display without modifying the config
 
 ## Low-Effort:
@@ -45,6 +44,7 @@
 
 ## Completed (for motivational purposes)
 
+- [x] configure 2 monitor setup
 - [x] find good linter & fix all errrors [linter list](https://discourse.nixos.org/t/list-of-nix-linters/19279)
 - [x] auto-fill username in ./activate script
 - [x] pass ./activate script flags to home-manager switch
