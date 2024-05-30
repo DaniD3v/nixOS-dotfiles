@@ -17,7 +17,10 @@
 
 ## Easy:
 
-- [ ] update README to reflect new user-system changes
+- [ ] update README to reflect new user-system changesA
+- [ ] add custom tiling with dwindle layout [docs](https://wiki.hyprland.org/Configuring/Dwindle-Layout/)
+- [ ] configure 2 monitor setup
+- [ ] make it possible to switch from mirroring/2nd display without modifying the config
 
 ## Low-Effort:
 
