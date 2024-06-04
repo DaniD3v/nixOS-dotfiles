@@ -36,6 +36,7 @@
       withOpenASAR = true;
       withVencord = true;
     })
+    ciscoPacketTracer8
     teams-for-linux
     prismlauncher
     burpsuite
@@ -43,11 +44,13 @@
     qFlipper
     blender
     spotify
+    postman
     gimp
 
     # CLI: essential
     wl-clipboard
     shellcheck
+    diesel-cli
     rustic-rs
     python3
     rustup
