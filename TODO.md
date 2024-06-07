@@ -7,6 +7,7 @@
 - [ ] fix home.sessionPath [github issue](https://github.com/nix-community/home-manager/issues/3417)
 - [ ] fix rclone systemd error [github issue](https://github.com/rclone/rclone/issues/3655)
 - [ ] fix github secrets disappearing on garbage collect
+- [ ] replace broken swaylock & swayidle
 
 ## Code-Quality:
 
@@ -16,6 +17,7 @@
 - [ ] make default.nix files and import all the paths in there.
 - [ ] make bitwarden a module with configurable email.
 - [ ] remove the email address from the git module/ define it in users/notyou.nix
+- [ ] replace "~/.local/bin/wal" with a proper deriviation
 
 ## Easy:
 
