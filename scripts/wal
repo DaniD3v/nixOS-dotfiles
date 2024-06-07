@@ -1,9 +1,0 @@
-#!/usr/bin/env sh
-
-set -e
-wallpaper=$(readlink -f "$1")
-
-swww img ${wallpaper} -t grow --transition-pos 0.7,0.9
-matugen image "${wallpaper}" 1>/dev/null
-
-pywalfox update 2>/dev/null

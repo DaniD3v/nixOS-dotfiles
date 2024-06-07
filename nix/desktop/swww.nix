@@ -13,6 +13,8 @@ in {
 
     Service = {
       Type = "notify";
+
+      Environment = "XDG_RUNTIME_DIR=/run/user/%U";
       ExecStart = "${package}/bin/swww-daemon";
     };
 

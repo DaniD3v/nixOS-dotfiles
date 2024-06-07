@@ -19,6 +19,7 @@ in {
       ./programs/git.nix
       ./programs/ssh.nix
 
+      ./theming/wal-script.nix
       ./theming/matugen.nix
       ./theming/firefox.nix
       ./theming/gtk.nix

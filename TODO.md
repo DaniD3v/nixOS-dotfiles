@@ -48,6 +48,7 @@
 
 ## Completed (for motivational purposes)
 
+- [x] fix rofi wallpaper menu not working
 - [x] configure 2 monitor setup
 - [x] find good linter & fix all errrors [linter list](https://discourse.nixos.org/t/list-of-nix-linters/19279)
 - [x] auto-fill username in ./activate script
