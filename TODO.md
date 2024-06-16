@@ -6,7 +6,7 @@
 - [ ] fix pywalfox extension not working [gitlab issue](https://gitlab.com/rycee/nur-expressions/-/issues/217)
 - [ ] fix home.sessionPath [github issue](https://github.com/nix-community/home-manager/issues/3417)
 - [ ] fix rclone systemd error [github issue](https://github.com/rclone/rclone/issues/3655)
-- [ ] fix github secrets disappearing on garbage collect
+- [ ] fix github secrets disappearing on garbage collect [github issue](https://github.com/NixOS/nix/issues/10924)
 - [ ] replace broken swaylock & swayidle
 
 ## Code-Quality:
