@@ -10,6 +10,3 @@ strip = "debuginfo"
 strip = true
 lto = true
 
-[target.x86_64-unknown-linux-gnu]
-rustflags = ["-Zlinker-features=-lld"] # fix nightly bug
-
