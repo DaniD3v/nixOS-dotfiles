@@ -58,6 +58,7 @@
     btop
     nmap
     git
+    gcc
 
     # CLI: additional
     silver-searcher # this is ag
