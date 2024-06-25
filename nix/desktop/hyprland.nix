@@ -33,7 +33,6 @@
 
       exec-once = [
         "${pkgs.systemd}/bin/systemctl --user start onedrive.service"
-        "${pkgs.systemd}/bin/systemctl --user start swayidle.service"
         "${pkgs.systemd}/bin/systemctl --user start swww.service"
 
         "${pkgs.dunst}/bin/dunst"
