@@ -14,6 +14,7 @@
     gnome-text-editor
     gnome.nautilus
     libreoffice
+    pwvucontrol
     gnome.eog
     marktext
     errands
