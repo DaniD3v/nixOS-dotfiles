@@ -11,21 +11,11 @@
 in {
   imports =
     [
-      ./desktop/hyprland.nix
-
-      ./programs/alacritty.nix
-      ./programs/fish.nix
-      ./programs/git.nix
-      ./programs/ssh.nix
+      ./programs
+      ./desktop
+      ./theming
       ./neovim
-
-      ./theming/wal-script.nix
-      ./theming/matugen.nix
-      ./theming/firefox.nix
-      ./theming/gtk.nix
-
-      ./other/onedrive.nix
-      ./other/cargo.nix
+      ./other
     ]
     ++ userConfig;
 

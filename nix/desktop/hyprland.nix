@@ -4,12 +4,6 @@
   config,
   ...
 }: {
-  imports = [
-    ./swaylock.nix
-    ./swww.nix
-    ./ags.nix
-  ];
-
   wayland.windowManager.hyprland = {
     enable = true;
 

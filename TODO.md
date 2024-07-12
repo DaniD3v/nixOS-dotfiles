@@ -14,7 +14,6 @@
 - [ ] remove system variable in flake.nix -> flake-utils
 - [ ] make flake packages accessible with packageOverrides
 - [ ] rewrite nix-which script
-- [ ] make default.nix files and import all the paths in there.
 - [ ] make bitwarden a module with configurable email.
 - [ ] remove the email address from the git module/ define it in users/notyou.nix
 - [ ] replace "~/.local/bin/wal" with a proper deriviation
@@ -48,6 +47,7 @@
 
 ## Completed (for motivational purposes)
 
+- [x] make default.nix files and import all the paths in there.
 - [x] fix rofi wallpaper menu not working
 - [x] configure 2 monitor setup
 - [x] find good linter & fix all errrors [linter list](https://discourse.nixos.org/t/list-of-nix-linters/19279)
