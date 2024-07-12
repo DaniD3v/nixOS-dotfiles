@@ -1,6 +1,6 @@
 
 .rounded {
-    border-radius: 8px;
+    border-radius: 0px 0px 8px 8px;
 }
 
 .margin-lr {
@@ -18,3 +18,4 @@
 .color-widget-box {
     background-color: #353535;
 }
+

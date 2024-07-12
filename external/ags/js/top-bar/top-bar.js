@@ -17,7 +17,6 @@ const TopBar = (monitor) => Widget.Window({
     class_name: "color-background rounded",
 
     anchor: ['top', 'left', 'right'],
-    margins: [5],
     exclusivity: 'exclusive',
     
     child: Widget.CenterBox({
