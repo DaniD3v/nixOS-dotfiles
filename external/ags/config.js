@@ -1,6 +1,6 @@
-import App from 'resource:///com/github/Aylur/ags/app.js'
+import { TopBar } from "./js/top-bar/top-bar.js";
 
-export default {
-    style: `${App.configDir}/css/top-bar.css`,
-}
-
+App.config({
+  windows: [TopBar()],
+  style: `${App.configDir}/css/top-bar.css`,
+});
