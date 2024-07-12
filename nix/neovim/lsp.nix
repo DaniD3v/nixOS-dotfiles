@@ -2,17 +2,19 @@
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
       nvim-lspconfig
-      
-      cmp-nvim-lsp
+
       nvim-cmp
-      
+      cmp-nvim-lsp
+      cmp-path
+
       conform-nvim
     ];
 
     extraPackages = with pkgs; [
       rust-analyzer
+      nodePackages.typescript-language-server
       nixd
-      
+
       alejandra
     ];
 
@@ -21,11 +23,13 @@
       cmp = require("cmp")
 
       lspConfig.rust_analyzer.setup{}
+      lspConfig.tsserver.setup{}
       lspConfig.nixd.setup{}
 
       cmp.setup {
         sources = {
-          { name = "nvim_lsp" }
+          { name = "nvim_lsp" },
+          { name = "path" }
         },
         mapping = {
           ['<C-k>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
