@@ -14,10 +14,10 @@ in {
       ./desktop/hyprland.nix
 
       ./programs/alacritty.nix
-      ./programs/neovim.nix
       ./programs/fish.nix
       ./programs/git.nix
       ./programs/ssh.nix
+      ./neovim
 
       ./theming/wal-script.nix
       ./theming/matugen.nix

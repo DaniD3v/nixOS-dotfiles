@@ -1,12 +1,17 @@
 {pkgs, ...}: {
+  imports = [
+    ./remap.nix
+    ./lsp.nix
+  ];
+
   programs.neovim = {
     defaultEditor = true;
 
     plugins = with pkgs.vimPlugins; [
       nvim-autopairs
-      nerdtree
       coq-artifacts
-      coq_nvim
+
+      nerdtree
 
       vim-airline
       vim-devicons
@@ -15,11 +20,8 @@
     ];
 
     extraConfig = ''
-      " share system clipboard
-      set clipboard+=unnamedplus
-
-      " skip through line breaks with hjkl and <- ->
-      set whichwrap+=<,>,h,l,[,]
+      " skip through line breaks with hl and <- ->
+      set whichwrap+=<,>,h,l
 
       " Scrolling with Ctrl + j/k
       nnoremap <C-k> <C-y>
@@ -28,9 +30,6 @@
       " Scrolling with Ctrl + Up/Down arrow keys
       nnoremap <C-Up> <C-y>
       nnoremap <C-Down> <C-e>
-
-      " reload command
-      command! Reload source $MYVIMRC"
 
       colorscheme tokyonight
 
@@ -53,9 +52,5 @@
     extraLuaConfig = ''
       require("nvim-autopairs").setup()
     '';
-
-    extraPackages = with pkgs; [
-      # TODO install lsps directly
-    ];
   };
 }
