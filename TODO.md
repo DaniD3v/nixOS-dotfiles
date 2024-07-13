@@ -10,7 +10,6 @@
 
 ## Code-Quality:
 
-- [ ] remove system variable in flake.nix -> flake-utils
 - [ ] make flake packages accessible with packageOverrides
 - [ ] rewrite nix-which script
 - [ ] make bitwarden a module with configurable email.
@@ -45,6 +44,7 @@
 
 ## Completed (for motivational purposes)
 
+- [x] remove system variable in flake.nix -> flake-utils
 - [x] make dotfiles username independent
 - [x] secret management (not world readable & install without secrets)
 - [x] fix github secrets disappearing on garbage collect [github issue](https://github.com/NixOS/nix/issues/10924)

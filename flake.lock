@@ -20,6 +20,18 @@
         "type": "github"
       }
     },
+    "etc-passwd": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-nyldV5EEzsAXW3+LGOAkSRU8Q6RVs1eMgicAkxne9LI=",
+        "type": "file",
+        "url": "file:///etc/passwd"
+      },
+      "original": {
+        "type": "file",
+        "url": "file:///etc/passwd"
+      }
+    },
     "firefox-addons": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -58,6 +70,23 @@
         "type": "github"
       }
     },
+    "flake-utils_2": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1710146030,
+        "narHash": "sha256-SZ5L6eA7HJ/nmkzGG7/ISclqe6oZdOZTNoesiInkXPQ=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "b1d9ab70662946ef0850d488da1c9019f3a9752a",
+        "type": "github"
+      },
+      "original": {
+        "id": "flake-utils",
+        "type": "indirect"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -84,7 +113,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "systems": "systems"
+        "systems": "systems_2"
       },
       "locked": {
         "lastModified": 1719821386,
@@ -135,15 +164,31 @@
     "root": {
       "inputs": {
         "ags": "ags",
+        "etc-passwd": "etc-passwd",
         "firefox-addons": "firefox-addons",
+        "flake-utils": "flake-utils_2",
         "home-manager": "home-manager",
         "matugen": "matugen",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-unstable": "nixpkgs-unstable",
-        "usernames": "usernames"
+        "nixpkgs-unstable": "nixpkgs-unstable"
       }
     },
     "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_2": {
       "locked": {
         "lastModified": 1689347949,
         "narHash": "sha256-12tWmuL2zgBgZkdoB6qXZsgJEH9LR3oUgpaQq2RbI80=",
@@ -156,18 +201,6 @@
         "owner": "nix-systems",
         "repo": "default-linux",
         "type": "github"
-      }
-    },
-    "usernames": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-nyldV5EEzsAXW3+LGOAkSRU8Q6RVs1eMgicAkxne9LI=",
-        "type": "file",
-        "url": "file:///etc/passwd"
-      },
-      "original": {
-        "type": "file",
-        "url": "file:///etc/passwd"
       }
     }
   },

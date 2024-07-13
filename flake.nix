@@ -3,7 +3,7 @@
 
   inputs = {
     # list of possible usernames on this machine
-    usernames = {
+    etc-passwd = {
       url = "file+file:///etc/passwd";
       flake = false;
     };
@@ -34,42 +34,46 @@
   };
 
   outputs = {
+    flake-utils,
+    etc-passwd,
     nixpkgs,
     home-manager,
     ...
-  } @ inputs: let
-    system = "x86_64-linux";
+  } @ inputs:
+    flake-utils.lib.eachDefaultSystem (
+      system: let
+        # A list of all possible usernames on this machine
+        # Will create a set with fitting home-manager configurations for each of them.
+        #
+        # This does not impact perforamnce because home-manager chooses
+        # which one of them it wants to evaluate.
+        usernames = with builtins;
+          map (e: elemAt e 0) (
+            filter isList (
+              split "\n([^:]+)" "\n${readFile etc-passwd}"
+            )
+          );
+      in {
+        packages = {
+          default = home-manager.defaultPackage.${system};
 
-    # A list of all possible usernames on this machine
-    # Will create a set with fitting home-manager configurations for each of them.
-    #
-    # This does not impact perforamnce because home-manager chooses
-    # which one of them it wants to evaluate.
-    usernames = with builtins;
-      map (e: elemAt e 0) (
-        filter isList (
-          split "\n([^:]+)" "\n${readFile inputs.usernames}"
-        )
-      );
+          # defined in packages to be generic over system
+          homeConfigurations = builtins.listToAttrs (map
+            (
+              username: {
+                name = username;
+                value = home-manager.lib.homeManagerConfiguration {
+                  pkgs = import nixpkgs {inherit system;};
+                  modules = [./nix/home.nix];
 
-    generateHomeConfig = username:
-      home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {inherit system;};
-        modules = [./nix/home.nix];
-
-        extraSpecialArgs = {
-          inherit inputs username system;
+                  extraSpecialArgs = {
+                    inherit inputs username system;
+                  };
+                };
+              }
+            )
+            usernames);
         };
-      };
-  in {
-    packages.${system}.default = home-manager.defaultPackage.${system};
-
-    homeConfigurations = builtins.listToAttrs (map (
-        name: {
-          inherit name;
-          value = generateHomeConfig name;
-        }
-      )
-      usernames);
-  };
+      }
+    );
 }
