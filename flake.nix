@@ -2,6 +2,12 @@
   description = "DaniD3v's corn-flakes";
 
   inputs = {
+    # list of possible usernames on this machine
+    usernames = {
+      url = "file+file:///etc/passwd";
+      flake = false;
+    };
+
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
@@ -33,17 +39,39 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
-    username = import ./username.nix;
+
+    # A list of all possible usernames on this machine
+    # Will create a set with fitting home-manager configurations for each of them.
+    #
+    # This does not impact perforamnce because home-manager chooses
+    # which one of them it wants to evaluate.
+    usernames = with builtins;
+      map (e: elemAt e 0) (
+        filter (e: isList e) (
+          split "\n([^:]+)" (
+            readFile inputs.usernames
+          )
+        )
+      );
+
+    generateHomeConfig = username:
+      home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {inherit system;};
+        modules = [./nix/home.nix];
+
+        extraSpecialArgs = {
+          inherit inputs username system;
+        };
+      };
   in {
     packages.${system}.default = home-manager.defaultPackage.${system};
 
-    homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-      pkgs = import nixpkgs {inherit system;};
-      modules = [./nix/home.nix];
-
-      extraSpecialArgs = {
-        inherit inputs username system;
-      };
-    };
+    homeConfigurations = builtins.listToAttrs (map (
+        name: {
+          inherit name;
+          value = generateHomeConfig name;
+        }
+      )
+      usernames);
   };
 }

@@ -45,6 +45,7 @@
 
 ## Completed (for motivational purposes)
 
+- [x] make dotfiles username independent
 - [x] secret management (not world readable & install without secrets)
 - [x] fix github secrets disappearing on garbage collect [github issue](https://github.com/NixOS/nix/issues/10924)
 - [x] make default.nix files and import all the paths in there.

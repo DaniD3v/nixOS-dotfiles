@@ -139,7 +139,8 @@
         "home-manager": "home-manager",
         "matugen": "matugen",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-unstable": "nixpkgs-unstable"
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "usernames": "usernames"
       }
     },
     "systems": {
@@ -155,6 +156,18 @@
         "owner": "nix-systems",
         "repo": "default-linux",
         "type": "github"
+      }
+    },
+    "usernames": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-nyldV5EEzsAXW3+LGOAkSRU8Q6RVs1eMgicAkxne9LI=",
+        "type": "file",
+        "url": "file:///etc/passwd"
+      },
+      "original": {
+        "type": "file",
+        "url": "file:///etc/passwd"
       }
     }
   },

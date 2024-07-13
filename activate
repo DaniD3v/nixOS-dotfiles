@@ -22,13 +22,10 @@ if [ "$(id -u)" -eq 0 ]; then
     exit 1
 fi
 
-# write username.nix
-echo "\"$USER\"" > username.nix
-
 # get flake root relative to this script
 root=$(dirname -- "$(readlink -f -- "${BASH_SOURCE[0]}")")
 
 # fancy home-manager switch that works even if home-manager isn't installed
 nix --extra-experimental-features 'nix-command flakes' run "$root" -- \
-  switch --extra-experimental-features 'nix-command flakes' --flake path:"$root" "$@"
+  switch --extra-experimental-features 'nix-command flakes' --flake "$root" "$@"
 
