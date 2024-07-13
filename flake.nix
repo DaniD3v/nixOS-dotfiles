@@ -47,10 +47,8 @@
     # which one of them it wants to evaluate.
     usernames = with builtins;
       map (e: elemAt e 0) (
-        filter (e: isList e) (
-          split "\n([^:]+)" (
-            readFile inputs.usernames
-          )
+        filter isList (
+          split "\n([^:]+)" "\n${readFile inputs.usernames}"
         )
       );
 

@@ -33,7 +33,7 @@
     baobab
 
     # Applications
-    (pkgs.discord.override {
+    (discord.override {
       withOpenASAR = true;
       withVencord = true;
     })
