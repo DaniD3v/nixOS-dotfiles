@@ -17,7 +17,7 @@
       ExecStartPre = "-${pkgs.coreutils}/bin/mkdir -p %h/onedrive";
       ExecStart = ''
         ${pkgs.rclone}/bin/rclone mount \
-            --config=${../../secrets/rclone.conf} \
+            --config=%h/.secrets/rclone.conf \
             --vfs-cache-mode full \
             --vfs-cache-max-age 1y \
             onedrive: %h/onedrive
