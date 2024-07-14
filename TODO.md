@@ -24,6 +24,7 @@
 
 ## Low-Effort:
 
+- [ ] incorporate activate script into default package -> Allow deployment without downloading
 - [ ] proper bitwarden setup with bitwarden-rofi and pinentry
 - [ ] biblata cursors
 - [ ] try out hyprlock

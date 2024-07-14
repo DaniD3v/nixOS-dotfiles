@@ -23,7 +23,7 @@
     "etc-passwd": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-nyldV5EEzsAXW3+LGOAkSRU8Q6RVs1eMgicAkxne9LI=",
+        "narHash": "sha256-e2TVSy4aP/ral9JTZO9a2E3FDQwlrriUCZ8YzTg5tcQ=",
         "type": "file",
         "url": "file:///etc/passwd"
       },
