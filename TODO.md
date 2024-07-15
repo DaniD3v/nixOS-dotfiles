@@ -18,6 +18,8 @@
 
 ## Easy:
 
+- [ ] somehow save prismlauncher configurations
+- [ ] install rust toolchain from overlay
 - [ ] update README to reflect new user-system changesA
 - [ ] add custom tiling with dwindle layout [docs](https://wiki.hyprland.org/Configuring/Dwindle-Layout/)
 - [ ] make it possible to switch from mirroring/2nd display without modifying the config
