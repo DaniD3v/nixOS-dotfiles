@@ -7,12 +7,7 @@
 
   home.packages = with pkgs; [
     # jetbrains
-    unstable.jetbrains.rust-rover
-    jetbrains.pycharm-professional
-    jetbrains.idea-ultimate
-    jetbrains.webstorm
-    jetbrains.datagrip
-    android-studio
+    jetbrains.rust-rover
 
     # OS GUI: essential
     gnome-text-editor
