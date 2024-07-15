@@ -41,7 +41,17 @@
     gimp
 
     # CLI: essential
-    fenix.default.toolchain
+    (fenix.complete.withComponents [
+      "rust-std"
+      "cargo"
+      "rustc"
+
+      "rustfmt"
+      "clippy"
+      "miri"
+
+      "rust-src"
+    ])
     wl-clipboard
     shellcheck
     diesel-cli
