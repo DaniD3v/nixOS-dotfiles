@@ -18,6 +18,7 @@
 
 ## Easy:
 
+- [ ] add completition for the nix fish abbreviations
 - [ ] somehow save prismlauncher configurations
 - [ ] install rust toolchain from overlay
 - [ ] update README to reflect new user-system changesA
@@ -50,6 +51,7 @@
 
 ## Completed (for motivational purposes)
 
+- [x] update shell aliases to pure nix commands
 - [x] remove system variable in flake.nix -> flake-utils
 - [x] make dotfiles username independent
 - [x] secret management (not world readable & install without secrets)
