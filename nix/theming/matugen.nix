@@ -1,6 +1,6 @@
 {
   inputs,
-  system,
+  pkgs,
   ...
 }: {
   imports = [inputs.matugen.nixosModules.default];
@@ -24,5 +24,5 @@
   # https://github.com/InioX/matugen/issues/60
   xdg.configFile."matugen/config.toml".source = ../../external/matugen.toml;
 
-  home.packages = [inputs.matugen.packages.${system}.default];
+  home.packages = [pkgs.matugen];
 }

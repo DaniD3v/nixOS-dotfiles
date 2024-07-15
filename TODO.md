@@ -10,7 +10,6 @@
 
 ## Code-Quality:
 
-- [ ] make flake packages accessible with packageOverrides
 - [ ] rewrite nix-which script
 - [ ] make bitwarden a module with configurable email.
 - [ ] remove the email address from the git module/ define it in users/notyou.nix
@@ -51,6 +50,7 @@
 
 ## Completed (for motivational purposes)
 
+- [x] make flake packages accessible with packageOverrides
 - [x] optimized flake inputs
 - [x] replace imperative rust installation
 - [x] update shell aliases to pure nix commands

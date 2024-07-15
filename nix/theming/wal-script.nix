@@ -1,6 +1,5 @@
 {
   inputs,
-  system,
   pkgs,
   ...
 }: {
@@ -15,7 +14,7 @@
       export XDG_RUNTIME_DIR=/run/user/''${UID} # use right swww socket
 
       ${pkgs.swww}/bin/swww img ''${wallpaper} -t grow --transition-pos 0.7,0.9
-      ${inputs.matugen.packages.${system}.default}/bin/matugen image ''${wallpaper} 1>/dev/null
+      ${pkgs.matugen}/bin/matugen image ''${wallpaper} 1>/dev/null
 
       ${pkgs.pywalfox-native}/bin/pywalfox update 2>/dev/null
     '';

@@ -30,7 +30,7 @@
         "${pkgs.systemd}/bin/systemctl --user start swww.service"
 
         "${pkgs.dunst}/bin/dunst"
-        "${pkgs.ags}/bin/ags"
+        "${config.programs.ags.package}/bin/ags"
       ];
 
       exec = [

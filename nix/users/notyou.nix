@@ -1,8 +1,4 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [../other/rog-strix.nix];
 
   home.packages = with pkgs; [
@@ -45,7 +41,7 @@
     gimp
 
     # CLI: essential
-    inputs.fenix.packages.${system}.default.toolchain
+    fenix.default.toolchain
     wl-clipboard
     shellcheck
     diesel-cli
