@@ -33,10 +33,6 @@
     baobab
 
     # Applications
-    (discord.override {
-      withOpenASAR = true;
-      withVencord = true;
-    })
     ciscoPacketTracer8
     teams-for-linux
     prismlauncher
@@ -46,6 +42,7 @@
     blender
     spotify
     postman
+    vesktop
     gimp
 
     # CLI: essential

@@ -35,6 +35,9 @@
 
 ## High-Effort
 
+- [ ] make bootstrapping easier for myself with a custom flake for easily installing everything + fetching stuff from bitwarden
+- [ ] disko setup so that install is completely automatic
+- [ ] custom ISO which installs completely automatically
 - [ ] proper matugen hm-module [github PR](https://github.com/InioX/matugen/pull/68)
 - [ ] matugen integration
 - [ ] improve neovim config
