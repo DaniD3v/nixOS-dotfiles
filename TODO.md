@@ -51,6 +51,7 @@
 
 ## Completed (for motivational purposes)
 
+- [x] replace imperative rust installation
 - [x] update shell aliases to pure nix commands
 - [x] remove system variable in flake.nix -> flake-utils
 - [x] make dotfiles username independent

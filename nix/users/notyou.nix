@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [../other/rog-strix.nix];
 
   home.packages = with pkgs; [
@@ -46,12 +50,13 @@
     gimp
 
     # CLI: essential
+    inputs.fenix.packages.${system}.default.toolchain
     wl-clipboard
     shellcheck
     diesel-cli
     rustic-rs
+    ripgrep
     python3
-    rustup
     tokei
     btop
     nmap
@@ -61,11 +66,8 @@
     # CLI: additional
     silver-searcher # this is ag
     cargo-expand
-    pulsemixer
     fastfetch
     textplots
-    rustcat
-    udict
     tlrc
 
     # nix related
