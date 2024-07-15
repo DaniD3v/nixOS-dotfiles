@@ -10,6 +10,7 @@
 
 ## Code-Quality:
 
+- [ ] automatically import flake modules
 - [ ] rewrite nix-which script
 - [ ] make bitwarden a module with configurable email.
 - [ ] remove the email address from the git module/ define it in users/notyou.nix
