@@ -20,6 +20,7 @@
     gnome.gnome-characters
     gnome.gnome-calculator
     gnome.gnome-clocks
+    video-trimmer
     gnome.totem
     textpieces
     fragments

@@ -133,6 +133,9 @@
         hyprshot-command = "${pkgs.hyprshot}/bin/hyprshot -o /tmp -f screenshot";
       in
         [
+          # pass keybind to obs
+          "$mainMod, F9, pass,^(com\.obsproject\.Studio)$"
+
           "$mainMod, bracketleft, movecurrentworkspacetomonitor, eDP-1"
           "$mainMod, bracketright, movecurrentworkspacetomonitor, HDMI-A-1"
 
