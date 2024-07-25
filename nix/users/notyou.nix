@@ -52,6 +52,8 @@
       "miri"
 
       "rust-src"
+      "rustc-dev"
+      "llvm-tools-preview"
     ])
     wl-clipboard
     shellcheck
