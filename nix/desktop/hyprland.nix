@@ -66,8 +66,10 @@
         rounding = 3;
 
         blur = {
-          size = 8;
-          passes = 2;
+          size = 7;
+          passes = 4;
+
+          brightness = 0.78;
         };
       };
 
