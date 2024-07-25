@@ -10,6 +10,7 @@
 
 ## Code-Quality:
 
+- [ ] use lib.optionals instead of manual if-else chain
 - [ ] automatically import flake modules
 - [ ] rewrite nix-which script
 - [ ] make bitwarden a module with configurable email.
