@@ -9,7 +9,10 @@
 
     languages = {
       language-server = {
-        rust-analyzer.config.check.command = "${pkgs.clippy}/bin/clippy";
+        rust-analyzer.config = {
+          rustc.source = "discover"; # make rustc internal crates work
+          check.command = "${pkgs.clippy}/bin/clippy";
+        };
       };
 
       language = [
