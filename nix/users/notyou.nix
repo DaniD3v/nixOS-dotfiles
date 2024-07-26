@@ -84,7 +84,7 @@
   programs = {
     alacritty.enable = true;
     firefox.enable = true;
-    neovim.enable = true;
+    helix.enable = true;
     fish.enable = true;
     git.enable = true;
     ssh.enable = true;

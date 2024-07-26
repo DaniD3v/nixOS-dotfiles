@@ -15,7 +15,6 @@ in {
       ./programs
       ./desktop
       ./theming
-      ./neovim
       ./other
     ]
     ++ userConfig;
