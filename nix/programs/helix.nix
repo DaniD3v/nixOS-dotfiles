@@ -1,6 +1,18 @@
 {pkgs, ...}: {
   programs.helix = {
     defaultEditor = true;
+
+    settings = {
+      theme = "jetbrains_dark";
+      # theme = "base16_transparent";
+      
+      editor = {
+        indent-guides.render = true;
+        cursor-shape.insert = "bar";
+
+        completion-trigger-len = 0;
+      };
+    };
     
     extraPackages = with pkgs; [
       rust-analyzer
