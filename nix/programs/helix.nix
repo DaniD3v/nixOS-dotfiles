@@ -16,6 +16,7 @@
     
     extraPackages = with pkgs; [
       rust-analyzer
+      pyright
       nil
     ];
 
@@ -31,6 +32,10 @@
         {
           name = "nix";
           formatter.command = "${pkgs.alejandra}/bin/alejandra";
+        }
+        {
+          name = "python";
+          language-servers = [ "pyright" ];
         }
       ];
     };
