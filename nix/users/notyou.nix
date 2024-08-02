@@ -72,6 +72,7 @@
     cargo-expand
     fastfetch
     textplots
+    figlet
     tlrc
 
     # nix related
