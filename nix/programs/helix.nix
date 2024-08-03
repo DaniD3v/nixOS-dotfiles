@@ -3,7 +3,7 @@
     defaultEditor = true;
 
     settings = {
-      theme = "jetbrains_dark";
+      theme = "ayu_mirage";
       # theme = "base16_transparent";
       
       editor = {
