@@ -37,6 +37,7 @@
 
       btdcn = "${pkgs.bluez}/bin/bluetoothctl disconnect";
       btcn = "${pkgs.bluez}/bin/bluetoothctl connect";
+      tmp = "cd $(${pkgs.coreutils}/bin/mktemp -d)";
 
       yoink = "${pkgs.git}/bin/git clone --depth 1 --recurse-submodules";
       bcomp = "${pkgs.gnutar}/bin/tar --use-compress-program='${pkgs.pigz}/bin/pigz -9' -cf compressed.tar.xz";
