@@ -1,10 +1,4 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
-  imports = [inputs.matugen.nixosModules.default];
-
+{pkgs, ...}: {
   programs.matugen = {
     enable = true;
 

@@ -79,7 +79,12 @@
                 name = username;
                 value = home-manager.lib.homeManagerConfiguration {
                   pkgs = import nixpkgs {inherit system;};
-                  modules = [./nix/home.nix];
+                  modules = [
+                    inputs.matugen.nixosModules.default
+                    inputs.ags.homeManagerModules.default
+
+                    ./nix/home.nix
+                  ];
 
                   extraSpecialArgs = {
                     inherit inputs username system;

@@ -1,10 +1,4 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
-  imports = [inputs.matugen.nixosModules.default];
-
+{pkgs, ...}: {
   home.file.".local/bin/wal" = {
     text = ''
       #!/bin/sh
