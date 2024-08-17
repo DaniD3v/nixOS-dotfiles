@@ -6,6 +6,8 @@
     jetbrains.rust-rover
 
     # OS GUI: essential
+    gnome.gnome-disk-utility
+    gnome.gnome-calculator
     gnome-text-editor
     gnome.nautilus
     libreoffice
@@ -16,21 +18,19 @@
     warp
 
     # OS GUI: additional
-    gnome.gnome-disk-utility
     gnome.gnome-characters
-    gnome.gnome-calculator
     gnome.gnome-clocks
     video-trimmer
     gnome.totem
     textpieces
-    fragments
+    fragments # torrent client
     diebahn
     dialect
     baobab
 
     # Applications
-    ciscoPacketTracer8
-    teams-for-linux
+    # ciscoPacketTracer8
+    # teams-for-linux
     prismlauncher
     burpsuite
     geogebra6
@@ -55,27 +55,31 @@
       "rustc-dev"
       "llvm-tools-preview"
     ])
+    cargo-machete
     wl-clipboard
     shellcheck
-    diesel-cli
-    rustic-rs
     ripgrep
-    python3
     tokei
     btop
     nmap
+    tlrc # rust tldr client
     git
     gcc
 
+    # CLI: applications
+    android-tools
+    aircrack-ng
+    diesel-cli
+    macchanger
+    rustic-rs
+    python3
+    figlet
+
     # CLI: additional
-    silver-searcher # this is ag
-    cargo-expand
     fastfetch
     textplots
-    figlet
-    tlrc
 
-    # nix related
+    # CLI: nix related
     alejandra
     nix-tree
     deadnix
