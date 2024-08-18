@@ -26,8 +26,10 @@
     };
 
     matugen = {
-      url = "github:InioX/Matugen";
-      # url = "path:/home/notyou/devel/matugen";
+      # url = "github:InioX/Matugen"; # upstream
+      url = "github:DaniD3v/Matugen/fix-compilation-for-unix"; # fix while upstream is broken
+
+      # url = "path:/home/notyou/devel/matugen"; # local developement branch
 
       inputs = {
         nixpkgs.follows = "nixpkgs";
