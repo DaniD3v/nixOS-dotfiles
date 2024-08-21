@@ -49,7 +49,8 @@
     };
 
     extraPackages = with pkgs; [
-      rust-analyzer
+      fenix.rust-analyzer
+      
       pyright
       nil
     ];
