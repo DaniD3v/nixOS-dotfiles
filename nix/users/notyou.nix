@@ -42,19 +42,7 @@
     gimp
 
     # CLI: essential
-    (fenix.complete.withComponents [
-      "rust-std"
-      "cargo"
-      "rustc"
-
-      "rustfmt"
-      "clippy"
-      "miri"
-
-      "rust-src"
-      "rustc-dev"
-      "llvm-tools-preview"
-    ])
+    (import ../programs/rust-toolchain.nix pkgs)
     cargo-machete
     wl-clipboard
     shellcheck

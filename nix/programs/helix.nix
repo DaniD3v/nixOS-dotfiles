@@ -49,7 +49,7 @@
     };
 
     extraPackages = with pkgs; [
-      fenix.rust-analyzer
+      (import ./rust-toolchain.nix pkgs)
       
       pyright
       nil
@@ -58,8 +58,8 @@
     languages = {
       language-server = {
         rust-analyzer.config = {
-          rustc.source = "discover"; # make rustc internal crates work
-          check.command = "${pkgs.clippy}/bin/clippy";
+          # rustc.source = "discover"; # make rustc internal crates work
+          check.command = "clippy";
         };
       };
 
