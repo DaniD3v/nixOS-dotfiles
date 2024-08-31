@@ -76,7 +76,7 @@
 
   programs = {
     alacritty.enable = true;
-    firefox.enable = true;
+    librewolf.enable = true;
     helix.enable = true;
     fish.enable = true;
     git.enable = true;

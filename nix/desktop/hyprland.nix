@@ -144,7 +144,7 @@
           "$mainMod, D, execr, ${pkgs.alacritty}/bin/alacritty"
           "$mainMod, W, execr, ${pkgs.alacritty}/bin/alacritty -e $EDITOR"
           "$mainMod, E, execr, ${pkgs.gnome.nautilus}/bin/nautilus -w"
-          "$mainMod, Q, execr, ${config.programs.firefox.package}/bin/firefox"
+          "$mainMod, Q, execr, ${config.programs.librewolf.package}/bin/librewolf"
           "$mainMod, A, execr, ${pkgs.gnome.gnome-calculator}/bin/gnome-calculator"
           "$mainMod, N, execr, ${pkgs.gnome-text-editor}/bin/gnome-text-editor"
           "$mainMod, I, execr, ${pkgs.gnome.eog}/bin/eog /tmp/screenshot"
