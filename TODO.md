@@ -11,7 +11,6 @@
 ## Code-Quality:
 
 - [ ] use lib.optionals instead of manual if-else chain
-- [ ] automatically import flake modules
 - [ ] rewrite nix-which script
 - [ ] make bitwarden a module with configurable email.
 - [ ] remove the email address from the git module/ define it in users/notyou.nix
@@ -21,8 +20,7 @@
 
 - [ ] add completition for the nix fish abbreviations
 - [ ] somehow save prismlauncher configurations
-- [ ] install rust toolchain from overlay
-- [ ] update README to reflect new user-system changesA
+- [ ] update README to reflect new user-system changes
 - [ ] add custom tiling with dwindle layout [docs](https://wiki.hyprland.org/Configuring/Dwindle-Layout/)
 - [ ] make it possible to switch from mirroring/2nd display without modifying the config
 
@@ -44,7 +42,6 @@
 - [ ] custom ISO which installs completely automatically
 - [ ] proper matugen hm-module [github PR](https://github.com/InioX/matugen/pull/68)
 - [ ] matugen integration
-- [ ] improve neovim config
 - [ ] impermanence
 - [ ] find/write a proper screenshot tool
 - [ ] write ags widgets
@@ -52,6 +49,9 @@
 
 ## Completed (for motivational purposes)
 
+- [x] improve neovim config
+- [x] install rust toolchain from overlay
+- [x] automatically import flake modules
 - [x] make flake packages accessible with packageOverrides
 - [x] optimized flake inputs
 - [x] replace imperative rust installation
