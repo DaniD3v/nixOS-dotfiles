@@ -2,6 +2,7 @@
 
 ## Fixes:
 
+- [ ] librewolf options not applying?
 - [ ] fix bordergradient animation in hyprland. [github issue](https://github.com/hyprwm/Hyprland/issues/5693)
 - [ ] fix pywalfox extension not working [gitlab issue](https://gitlab.com/rycee/nur-expressions/-/issues/217)
 - [ ] fix home.sessionPath [github issue](https://github.com/nix-community/home-manager/issues/3417)
@@ -18,6 +19,7 @@
 
 ## Easy:
 
+- [ ] add librewolf save site data exceptions to home-manager
 - [ ] add completition for the nix fish abbreviations
 - [ ] somehow save prismlauncher configurations
 - [ ] update README to reflect new user-system changes
@@ -26,6 +28,8 @@
 
 ## Low-Effort:
 
+- [ ] setup just or sth to run commands with hx
+- [ ] properly setup C#
 - [ ] incorporate activate script into default package -> Allow deployment without downloading
 - [ ] proper bitwarden setup with bitwarden-rofi and pinentry
 - [ ] biblata cursors
