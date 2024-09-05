@@ -45,6 +45,7 @@
     (import ../programs/rust-toolchain.nix pkgs)
     cargo-machete
     wl-clipboard
+    cargo-sweep
     shellcheck
     ripgrep
     tokei
@@ -66,6 +67,7 @@
     # CLI: additional
     fastfetch
     textplots
+    spotdl
 
     # CLI: nix related
     alejandra
