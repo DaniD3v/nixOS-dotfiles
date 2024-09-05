@@ -1,5 +1,5 @@
 pkgs:
-pkgs.fenix.complete.withComponents [
+pkgs.fenix.latest.withComponents [
   "rust-std"
   "cargo"
   "rustc"
