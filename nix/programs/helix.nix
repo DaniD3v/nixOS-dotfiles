@@ -50,7 +50,8 @@
 
     extraPackages = with pkgs; [
       (import ./rust-toolchain.nix pkgs)
-      
+
+      omnisharp-roslyn
       pyright
       nil
     ];

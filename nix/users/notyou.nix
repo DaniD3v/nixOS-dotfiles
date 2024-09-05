@@ -29,8 +29,6 @@
     baobab
 
     # Applications
-    # ciscoPacketTracer8
-    # teams-for-linux
     prismlauncher
     burpsuite
     geogebra6
@@ -74,6 +72,11 @@
     nix-tree
     deadnix
     statix
+
+    # blurgh for school
+    ciscoPacketTracer8
+    # teams-for-linux
+    dotnet-sdk
   ];
 
   programs = {
