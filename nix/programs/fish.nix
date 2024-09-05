@@ -49,6 +49,17 @@
       cat = "${pkgs.bat}/bin/bat";
     };
 
+    shellAbbrs = {
+      ga = "git add";
+    
+      gc = "git commit";
+      gca = "git commit --amend";
+
+      gri = "git rebase -i";
+      grc = "git rebase --continue";
+      gra = "git rebase --abort";
+    };
+
     interactiveShellInit = ''
       set fish_greeting
       bind \b backward-kill-word
