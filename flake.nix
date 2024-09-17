@@ -40,7 +40,7 @@
     ags = {
       url = "github:Aylur/ags";
       inputs = {
-        nixpkgs.follows = "nixpkgs";
+        nixpkgs.follows = "nixpkgs-unstable";
         systems.follows = "systems";
       };
     };
