@@ -147,6 +147,7 @@
           "$mainMod, Q, execr, ${config.programs.librewolf.package}/bin/librewolf"
           "$mainMod, A, execr, ${pkgs.gnome.gnome-calculator}/bin/gnome-calculator"
           "$mainMod, N, execr, ${pkgs.gnome-text-editor}/bin/gnome-text-editor"
+          "$mainMod, B, execr, ${pkgs.bitwarden-desktop}/bin/bitwarden"
           "$mainMod, I, execr, ${pkgs.gnome.eog}/bin/eog /tmp/screenshot"
           "$mainMod, P, execr, ~/.local/bin/wal ~/wallpaper/$(${pkgs.coreutils}/bin/ls ~/wallpaper | ${pkgs.rofi-wayland}/bin/rofi -dmenu)"
 
