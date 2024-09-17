@@ -38,9 +38,11 @@
 - [ ] setup backup with rustic-rs
 - [ ] git pgp signatures
 - [ ] save WLAN connections as secrets
+- [ ] remove speech-dispatch from librewolf for 600Mb
 
 ## High-Effort
 
+- [ ] merge with system-dotfiles to avoid wasting space because of 2 channels
 - [ ] make bootstrapping easier for myself with a custom flake for easily installing everything + fetching stuff from bitwarden
 - [ ] disko setup so that install is completely automatic
 - [ ] custom ISO which installs completely automatically
