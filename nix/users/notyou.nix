@@ -2,9 +2,6 @@
   imports = [../other/rog-strix.nix];
 
   home.packages = with pkgs; [
-    # jetbrains
-    jetbrains.rust-rover
-
     # OS GUI: essential
     gnome.gnome-disk-utility
     gnome.gnome-calculator
@@ -29,6 +26,10 @@
     baobab
 
     # Applications
+    jetbrains.datagrip
+    unstable.zed-editor
+    
+    bitwarden-desktop
     prismlauncher
     burpsuite
     geogebra6
@@ -40,7 +41,6 @@
     gimp
 
     # CLI: essential
-    (import ../programs/rust-toolchain.nix pkgs)
     cargo-machete
     wl-clipboard
     cargo-sweep
@@ -54,10 +54,12 @@
     gcc
 
     # CLI: applications
+    (import ../programs/rust-toolchain.nix pkgs)
     android-tools
     aircrack-ng
     diesel-cli
     macchanger
+    nodejs_22
     rustic-rs
     python3
     figlet
