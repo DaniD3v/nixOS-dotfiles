@@ -8,6 +8,8 @@
     enable = true;
 
     settings = {
+      source = "~/.config/hypr/hyprland-colors.conf";
+    
       monitor = [
         "eDP-1,    highrr, 0x0, 1"
 
@@ -28,13 +30,10 @@
       exec-once = [
         "${pkgs.systemd}/bin/systemctl --user start onedrive.service"
         "${pkgs.systemd}/bin/systemctl --user start swww.service"
+        "~/.local/bin/wal ~/wallpaper/pink_landscape.png"
 
         "${pkgs.dunst}/bin/dunst"
         "${config.programs.ags.package}/bin/ags"
-      ];
-
-      exec = [
-        "~/.local/bin/wal ~/wallpaper/pink_landscape.png"
       ];
 
       windowrule = [
@@ -55,11 +54,10 @@
       };
 
       general = {
-        gaps_out = 10;
         border_size = 2;
 
-        "col.active_border" = "rgba(5f1d82ee) rgba(5f1d82ee) rgba(5f1d82ee) rgba(00c9a7ee)";
-        "col.inactive_border" = "rgba(595959aa)";
+        gaps_out = 6;
+        gaps_in  = 3;
       };
 
       decoration = {

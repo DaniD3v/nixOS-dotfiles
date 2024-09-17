@@ -1,23 +1,21 @@
-
 [config]
-# broken
-# reload_apps = true
-
-[config.reload_apps_list]
-gtk_theme = true
-kitty = true
-dunst = true
 
 [templates.rofi]
 input_path = "~/dotfiles/external/templates/rofi.rasi"
 output_path = "~/.config/rofi/config.rasi"
 
-# disabled because of how ugly the theme is
-# [templates.gtk]
-# input_path = "~/dotfiles/external/templates/gtk.css"
-# output_path = "~/.config/gtk-4.0/gtk.css"
+[templates.gtk]
+input_path = "~/dotfiles/external/templates/gtk-colors.css"
+output_path = "~/.config/gtk-4.0/gtk.css"
 
 [templates.firefox]
 input_path = "~/dotfiles/external/templates/colors.json"
 output_path = "~/.cache/wal/colors.json"
 
+[templates.hyprland]
+input_path = "~/dotfiles/external/templates/hyprland-colors.conf"
+output_path = "~/.config/hypr/hyprland-colors.conf"
+
+[templates.discord]
+input_path = "~/dotfiles/external/templates/discord.css"
+output_path = "~/.config/vesktop/settings/quickCss.css"

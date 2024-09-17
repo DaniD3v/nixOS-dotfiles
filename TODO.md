@@ -28,6 +28,7 @@
 
 ## Low-Effort:
 
+- [ ] include tide in setup
 - [ ] setup just or sth to run commands with hx
 - [ ] properly setup C#
 - [ ] incorporate activate script into default package -> Allow deployment without downloading
@@ -42,19 +43,28 @@
 
 ## High-Effort
 
+- [ ] write betterdiscord hm module and configure theme properly instead of using quickCss
 - [ ] merge with system-dotfiles to avoid wasting space because of 2 channels
 - [ ] make bootstrapping easier for myself with a custom flake for easily installing everything + fetching stuff from bitwarden
 - [ ] disko setup so that install is completely automatic
 - [ ] custom ISO which installs completely automatically
 - [ ] proper matugen hm-module [github PR](https://github.com/InioX/matugen/pull/68)
-- [ ] matugen integration
 - [ ] impermanence
 - [ ] find/write a proper screenshot tool
 - [ ] write ags widgets
 - [ ] proper Require = "network-online.target" on onedrive script
 
+## Matugen theming
+- [ ] tide (p10k fish ripoff)
+- [ ] helix
+- [ ] Spotify
+- [ ] Steam
+- [ ] Dynamically reload gtk theme
+- [ ] improve gtk theme side-bar
+
 ## Completed (for motivational purposes)
 
+- [x] matugen integration
 - [x] improve neovim config
 - [x] install rust toolchain from overlay
 - [x] automatically import flake modules
