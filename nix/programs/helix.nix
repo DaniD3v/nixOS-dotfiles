@@ -50,8 +50,13 @@
 
     extraPackages = with pkgs; [
       (import ./rust-toolchain.nix pkgs)
-
+      
       omnisharp-roslyn
+      csharpier
+
+      nodePackages.typescript-language-server
+      nodePackages.prettier
+
       pyright
       nil
     ];
