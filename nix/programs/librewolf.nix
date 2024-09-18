@@ -1,4 +1,4 @@
-{...}: {
+_: {
   programs.librewolf.settings = {
     # make lightmode work
     "privacy.resistFingerprinting" = false;
@@ -8,6 +8,5 @@
 
     # make websites like google that check for browsers work
     "general.useragent.compatMode.firefox" = true;
-    
   };
 }

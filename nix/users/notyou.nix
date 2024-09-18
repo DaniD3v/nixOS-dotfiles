@@ -28,7 +28,7 @@
     # Applications
     jetbrains.datagrip
     unstable.zed-editor
-    
+
     bitwarden-desktop
     prismlauncher
     burpsuite

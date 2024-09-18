@@ -9,7 +9,7 @@
 
     settings = {
       source = "~/.config/hypr/hyprland-colors.conf";
-    
+
       monitor = [
         "eDP-1,    highrr, 0x0, 1"
 
@@ -57,7 +57,7 @@
         border_size = 2;
 
         gaps_out = 6;
-        gaps_in  = 3;
+        gaps_in = 3;
       };
 
       decoration = {
