@@ -6,10 +6,6 @@
         inherit (z) src;
       } # fuzzy cd
       {
-        name = "tide";
-        inherit (tide) src;
-      } # prompt
-      {
         name = "done";
         inherit (done) src;
       } # notification after long commands
@@ -51,7 +47,7 @@
 
     shellAbbrs = {
       ga = "git add";
-    
+
       gc = "git commit";
       gca = "git commit --amend";
 
