@@ -2,6 +2,7 @@
 
 ## Fixes:
 
+- [ ] make `nix shell` work in prompt
 - [ ] librewolf options not applying?
 - [ ] fix bordergradient animation in hyprland. [github issue](https://github.com/hyprwm/Hyprland/issues/5693)
 - [ ] fix pywalfox extension not working [gitlab issue](https://gitlab.com/rycee/nur-expressions/-/issues/217)
@@ -43,6 +44,7 @@
 
 ## High-Effort
 
+- [ ] picture in picture mode on hyprland (pins) + gnome calculator pin
 - [ ] write betterdiscord hm module and configure theme properly instead of using quickCss
 - [ ] merge with system-dotfiles to avoid wasting space because of 2 channels
 - [ ] make bootstrapping easier for myself with a custom flake for easily installing everything + fetching stuff from bitwarden
@@ -100,4 +102,3 @@
 - [x] move home packages to modules
 - [x] fix obs/screensharing (second time)
 - [x] fix steam/hyprland (mesa version mismatch?)
-
