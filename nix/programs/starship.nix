@@ -8,10 +8,11 @@
         + "["
         + (
           # Left prompt
-          "[](fg:bg) "
-          + "[](fg:os bg:bg) "
-          + "| $directory "
-          + "(| $git_branch )($git_status )($git_state )"
+          "[](fg:os_bg)"
+          + "[](fg:os bg:os_bg)"
+          + "[](fg:os_bg bg:bg) "
+          + "$directory"
+          + "( | $git_branch)( $git_status)( $git_state)"
           + "[](fg:bg)"
           # Right prompt
           + "$fill("
@@ -38,6 +39,7 @@
         fg = "#87875F";
 
         frame = "#6C6C6C";
+        os_bg = "#484848";
 
         success_character = "#5FD700";
         failure = "#FF0000";
