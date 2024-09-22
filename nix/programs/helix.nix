@@ -44,7 +44,7 @@
 
           # Minor mode for running cargo commands
           (makeRunCommands "r" "cargo run")
-          (makeRunCommands "t" "cargo test")
+          (makeRunCommands "t" "cargo test --workspace")
         ];
     };
 
