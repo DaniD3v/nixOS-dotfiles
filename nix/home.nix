@@ -13,6 +13,7 @@ in {
   imports =
     [
       ./programs
+      ./scripts
       ./desktop
       ./theming
       ./other
@@ -54,14 +55,6 @@ in {
   home = {
     inherit username;
     homeDirectory = "/home/${username}";
-
-    sessionPath = [".local/bin"];
-    file.".local/bin" = {
-      source = ../scripts;
-
-      executable = true;
-      recursive = true;
-    };
 
     stateVersion = "23.11";
   };

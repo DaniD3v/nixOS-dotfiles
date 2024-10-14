@@ -6,6 +6,6 @@
     ", XF86Launch3, execr, ${pkgs.asusctl}/bin/asusctl led-mode -n"
     ", XF86Launch4, execr, ${pkgs.asusctl}/bin/asusctl profile -n"
 
-    ", XF86TouchpadToggle, execr, ${../../scripts/toggle_touchpad}"
+    ", XF86TouchpadToggle, execr, ~/.local/bin/toggle_touchpad"
   ];
 }
