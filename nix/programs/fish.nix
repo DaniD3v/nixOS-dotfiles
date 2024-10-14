@@ -30,6 +30,7 @@
 
     shellAliases = {
       ns = "${pkgs.nix}/bin/nix search nixpkgs";
+      nd = "${pkgs.nix}/bin/nix develop -c fish";
 
       btdcn = "${pkgs.bluez}/bin/bluetoothctl disconnect";
       btcn = "${pkgs.bluez}/bin/bluetoothctl connect";
@@ -60,6 +61,7 @@
       set fish_greeting
       bind \b backward-kill-word
 
+      set DOTNET_CLI_TELEMETRY_OPTOUT true
       fish_add_path ~/.local/bin  # TODO workaround because home.sessionPath isn't working.
     '';
   };

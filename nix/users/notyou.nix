@@ -46,6 +46,7 @@
     cargo-sweep
     shellcheck
     ripgrep
+    screen
     tokei
     btop
     nmap
@@ -59,15 +60,16 @@
     aircrack-ng
     diesel-cli
     macchanger
-    nodejs_22
     rustic-rs
     python3
+    docker
     figlet
 
     # CLI: additional
     fastfetch
     textplots
     spotdl
+    bun
 
     # CLI: nix related
     alejandra
@@ -78,7 +80,7 @@
     # blurgh for school
     ciscoPacketTracer8
     # teams-for-linux
-    dotnet-sdk
+    dotnet-sdk_8
   ];
 
   programs = {
