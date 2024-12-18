@@ -29,9 +29,7 @@
 
 ## Low-Effort:
 
-- [ ] include tide in setup
 - [ ] setup just or sth to run commands with hx
-- [ ] properly setup C#
 - [ ] incorporate activate script into default package -> Allow deployment without downloading
 - [ ] proper bitwarden setup with bitwarden-rofi and pinentry
 - [ ] biblata cursors
@@ -44,6 +42,7 @@
 
 ## High-Effort
 
+- [ ] write ags widgets
 - [ ] picture in picture mode on hyprland (pins) + gnome calculator pin
 - [ ] write betterdiscord hm module and configure theme properly instead of using quickCss
 - [ ] merge with system-dotfiles to avoid wasting space because of 2 channels
@@ -53,11 +52,9 @@
 - [ ] proper matugen hm-module [github PR](https://github.com/InioX/matugen/pull/68)
 - [ ] impermanence
 - [ ] find/write a proper screenshot tool
-- [ ] write ags widgets
 - [ ] proper Require = "network-online.target" on onedrive script
 
 ## Matugen theming
-- [ ] tide (p10k fish ripoff)
 - [ ] helix
 - [ ] Spotify
 - [ ] Steam
@@ -66,6 +63,8 @@
 
 ## Completed (for motivational purposes)
 
+- [x] properly setup C#
+- [x] include tide in setup
 - [x] matugen integration
 - [x] improve neovim config
 - [x] install rust toolchain from overlay
