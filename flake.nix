@@ -37,12 +37,9 @@
       };
     };
 
-    ags = {
-      url = "github:Aylur/ags";
-      inputs = {
-        nixpkgs.follows = "nixpkgs-unstable";
-        systems.follows = "systems";
-      };
+    hestia-bar = {
+      url = "/home/notyou/programming/hestia";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     flake-utils.inputs.systems.follows = "systems";
@@ -83,8 +80,6 @@
                   pkgs = import nixpkgs {inherit system;};
                   modules = [
                     inputs.matugen.nixosModules.default
-                    inputs.ags.homeManagerModules.default
-
                     ./nix/home.nix
                   ];
 

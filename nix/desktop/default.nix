@@ -3,6 +3,5 @@ _: {
     ./hyprland.nix
     ./swaylock.nix
     ./swww.nix
-    ./ags.nix
   ];
 }

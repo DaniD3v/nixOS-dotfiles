@@ -29,11 +29,13 @@
 
       exec-once = [
         "${pkgs.systemd}/bin/systemctl --user start onedrive.service"
+        
         "${pkgs.systemd}/bin/systemctl --user start swww.service"
+        "${pkgs.hestia-bar}/bin/hestia-bar"
+        "${pkgs.dunst}/bin/dunst"
+
         "~/.local/bin/wal ~/wallpaper/pink_landscape.png"
 
-        "${pkgs.dunst}/bin/dunst"
-        "${config.programs.ags.package}/bin/ags"
       ];
 
       windowrule = [
