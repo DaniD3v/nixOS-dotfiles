@@ -1,5 +1,7 @@
 {pkgs, ...}: {
-  programs.fish = {
+  programs.fish = let
+    nix_bin = "${pkgs.nix}/bin/nix";
+  in {
     plugins = with pkgs.fishPlugins; [
       {
         name = "z";
@@ -24,13 +26,16 @@
     ];
 
     functions = {
-      nr = "${pkgs.nix}/bin/nix run nixpkgs#$argv[1] -- $argv[2..-1]";
-      ni = "${pkgs.nix}/bin/nix shell nixpkgs#$argv[1]";
+      nr = "${nix_bin} run nixpkgs#$argv[1] -- $argv[2..-1]";
+      unr = "NIXPKGS_ALLOW_UNFREE=1 ${nix_bin} run --impure nixpkgs#$argv[1] -- $argv[2..-1]";
+
+      ni = "${nix_bin} shell nixpkgs#$argv[1] $argv[2..-1]";
+      uni = "NIXPKGS_ALLOW_UNFREE=1 ${nix_bin} shell --impure nixpkgs#$argv[1] $argv[2..-1]";
     };
 
     shellAliases = {
-      ns = "${pkgs.nix}/bin/nix search nixpkgs";
-      nd = "${pkgs.nix}/bin/nix develop -c fish";
+      ns = "${nix_bin} search nixpkgs";
+      nd = "${nix_bin} develop -c fish";
 
       btdcn = "${pkgs.bluez}/bin/bluetoothctl disconnect";
       btcn = "${pkgs.bluez}/bin/bluetoothctl connect";
@@ -46,15 +51,17 @@
       cat = "${pkgs.bat}/bin/bat";
     };
 
-    shellAbbrs = {
-      ga = "git add";
+    shellAbbrs = let
+      git_bin = "${pkgs.git}/bin/git";
+    in {
+      ga = "${git_bin} add";
 
-      gc = "git commit";
-      gca = "git commit --amend";
+      gc = "${git_bin} commit";
+      gca = "${git_bin} commit --amend";
 
-      gri = "git rebase -i";
-      grc = "git rebase --continue";
-      gra = "git rebase --abort";
+      gri = "${git_bin} rebase -i";
+      grc = "${git_bin} rebase --continue";
+      gra = "${git_bin} rebase --abort";
     };
 
     interactiveShellInit = ''
