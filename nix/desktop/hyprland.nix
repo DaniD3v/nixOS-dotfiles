@@ -13,8 +13,8 @@
       monitor = [
         "eDP-1,    highrr, 0x0, 1"
 
-        # "HDMI-A-1, highrr, 0x0, 1, mirror, eDP-1" # clone monitor
-        "HDMI-A-1, highrr, auto-up, 1" # second monitor
+        # "HDMI-A-1, highrr, auto, 1, mirror, eDP-1" # clone monitor
+        "HDMI-A-1, highres, auto, 1" # second monitor
       ];
 
       workspace = let
@@ -29,20 +29,20 @@
 
       exec-once = [
         "${pkgs.systemd}/bin/systemctl --user start onedrive.service"
-        
+
         "${pkgs.systemd}/bin/systemctl --user start swww.service"
         "${pkgs.hestia-bar}/bin/hestia-bar"
         "${pkgs.dunst}/bin/dunst"
 
         "~/.local/bin/wal ~/wallpaper/pink_landscape.png"
-
       ];
 
-      windowrule = [
-        "suppressevent maximize, class:^(libreoffice.*)$"
-        "fullscreen,             Minecraft."
-        "tile,                   title:(Burp Suite Community Edition.)"
-        "float,                  Calculator"
+      windowrulev2 = [
+        "suppressevent maximize, class:libreoffice-."
+
+        "float,                  title:(Calculator)"
+        "fullscreen,             title:(Minecraft.)"
+        "tile,                   class:(burp-.)"
       ];
 
       input = {
@@ -132,7 +132,7 @@
           "$mainMod SHIFT, ${key}, movetoworkspace, ${toString workspace}"
         ];
 
-        hyprshot-command = "${pkgs.hyprshot}/bin/hyprshot -o /tmp -f screenshot";
+        hyprshot-command = "${pkgs.hyprshot}/bin/hyprshot -o ~/screenshots";
       in
         [
           # pass keybind to obs
@@ -143,12 +143,12 @@
 
           "$mainMod, D, execr, ${pkgs.alacritty}/bin/alacritty"
           "$mainMod, W, execr, ${pkgs.alacritty}/bin/alacritty -e $EDITOR"
-          "$mainMod, E, execr, ${pkgs.gnome.nautilus}/bin/nautilus -w"
+          "$mainMod, E, execr, ${pkgs.nautilus}/bin/nautilus -w"
           "$mainMod, Q, execr, ${config.programs.librewolf.package}/bin/librewolf"
-          "$mainMod, A, execr, ${pkgs.gnome.gnome-calculator}/bin/gnome-calculator"
+          "$mainMod, A, execr, ${pkgs.gnome-calculator}/bin/gnome-calculator"
           "$mainMod, N, execr, ${pkgs.gnome-text-editor}/bin/gnome-text-editor"
           "$mainMod, B, execr, ${pkgs.bitwarden-desktop}/bin/bitwarden"
-          "$mainMod, I, execr, ${pkgs.gnome.eog}/bin/eog /tmp/screenshot"
+          "$mainMod, I, execr, ${pkgs.eog}/bin/eog /tmp/screenshot"
           "$mainMod, P, execr, ~/.local/bin/wal ~/wallpaper/$(${pkgs.coreutils}/bin/ls ~/wallpaper | ${pkgs.rofi-wayland}/bin/rofi -dmenu)"
 
           # relative path for rofi
@@ -174,9 +174,9 @@
           ", XF86AudioNext, execr, ${pkgs.playerctl}/bin/playerctl next"
           ", XF86AudioPrev, execr, ${pkgs.playerctl}/bin/playerctl previous"
 
-          ",      PRINT, execr, ${hyprshot-command} -m output --current"
-          "CTRL,  PRINT, execr, ${hyprshot-command} -m window"
-          "SHIFT, PRINT, execr, ${hyprshot-command} -m region"
+          ",      PRINT, execr, ${hyprshot-command} -m output --current; ${pkgs.wl-clipboard}/bin/wl-paste > /tmp/screenshot"
+          "CTRL,  PRINT, execr, ${hyprshot-command} -m window; ${pkgs.wl-clipboard}/bin/wl-paste > /tmp/screenshot"
+          "SHIFT, PRINT, execr, ${hyprshot-command} -m region; ${pkgs.wl-clipboard}/bin/wl-paste > /tmp/screenshot"
 
           ", F11, fullscreen"
         ]
