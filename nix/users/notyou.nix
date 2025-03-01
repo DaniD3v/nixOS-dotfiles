@@ -3,31 +3,32 @@
 
   home.packages = with pkgs; [
     # OS GUI: essential
-    gnome.gnome-disk-utility
-    gnome.gnome-calculator
+    gnome-disk-utility
     gnome-text-editor
-    gnome.nautilus
+    gnome-calculator
     libreoffice
     pwvucontrol
-    gnome.eog
+    nautilus
     marktext
     errands
     warp
+    eog
 
     # OS GUI: additional
-    gnome.gnome-characters
-    gnome.gnome-clocks
+    gnome-characters
+    gnome-clocks
     video-trimmer
-    gnome.totem
     textpieces
     fragments # torrent client
     diebahn
     dialect
     baobab
+    totem # video player
 
     # Applications
     jetbrains.datagrip
     unstable.zed-editor
+    thunderbird
 
     bitwarden-desktop
     prismlauncher
@@ -80,6 +81,7 @@
     # blurgh for school
     ciscoPacketTracer8
     # teams-for-linux
+    nodePackages."@angular/cli"
     dotnet-sdk_8
   ];
 
