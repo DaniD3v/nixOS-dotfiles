@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   programs.starship = {
     enable = true;
 
@@ -114,12 +114,5 @@
 
       python.format = "[ $version](fg:python bg:bg)";
     };
-  };
-
-  # HACK: this is only here to match my system-configuration.
-  # Those configs will be merged in the future.
-  nix = {
-    package = pkgs.nix;
-    settings.use-xdg-base-directories = true;
   };
 }
