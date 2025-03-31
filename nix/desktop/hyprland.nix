@@ -13,8 +13,8 @@
       monitor = [
         "eDP-1,    highrr, 0x0, 1"
 
-        # "HDMI-A-1, highrr, auto, 1, mirror, eDP-1" # clone monitor
-        "HDMI-A-1, highres, auto, 1" # second monitor
+        "HDMI-A-1, highrr, auto, 1, mirror, eDP-1" # clone monitor
+        # "HDMI-A-1, highres, auto, 1" # second monitor
       ];
 
       workspace = let
