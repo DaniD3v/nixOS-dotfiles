@@ -20,20 +20,21 @@
     video-trimmer
     textpieces
     fragments # torrent client
-    diebahn
     dialect
     baobab
     totem # video player
 
     # Applications
     jetbrains.datagrip
+    jetbrains.webstorm
+    
     unstable.zed-editor
     thunderbird
-
     bitwarden-desktop
     prismlauncher
     burpsuite
     geogebra6
+    obsidian
     qFlipper
     blender
     spotify
@@ -58,21 +59,22 @@
     # CLI: applications
     (import ../programs/rust-toolchain.nix pkgs)
     android-tools
+    nodejs-slim
     aircrack-ng
     diesel-cli
     macchanger
     rustic-rs
     python3
     docker
-    figlet
+    bun
 
     # CLI: additional
     fastfetch
-    textplots
     spotdl
-    bun
+    figlet
 
     # CLI: nix related
+    nixos-anywhere
     alejandra
     nix-tree
     deadnix
@@ -80,7 +82,6 @@
 
     # blurgh for school
     ciscoPacketTracer8
-    # teams-for-linux
     nodePackages."@angular/cli"
     dotnet-sdk_8
   ];
