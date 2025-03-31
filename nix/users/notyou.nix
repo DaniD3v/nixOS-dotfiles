@@ -27,7 +27,7 @@
     # Applications
     jetbrains.datagrip
     jetbrains.webstorm
-    
+
     unstable.zed-editor
     thunderbird
     bitwarden-desktop
