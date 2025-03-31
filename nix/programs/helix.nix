@@ -49,9 +49,13 @@
     };
 
     extraPackages = with pkgs; [
-      (import ./rust-toolchain.nix pkgs)
+      angular-language-server
       pyright
+      sqls
       nil
+
+      (import ./rust-toolchain.nix pkgs)
+      taplo # toml lsp
 
       omnisharp-roslyn
       csharpier
@@ -59,7 +63,20 @@
       nodePackages.typescript-language-server
       nodePackages.prettier
 
-      taplo # toml lsp
+      (buildNpmPackage rec {
+        pname = "greybel-languageserver";
+        version = "1.14.0";
+
+        src = fetchFromGitHub {
+          owner = "ayecue";
+          repo = pname;
+          rev = "f8e0eb41e84c2af71affa3fc54ef6dd7f6989e60";
+          hash = "sha256-ibhqOLN/T8qivR7F1t9d3YrBjMTRbAHDI9aqYDfhdmY=";
+        };
+        sourceRoot = "source/packages/node";
+
+        npmDepsHash = "sha256-qu7T/mXyA8PYdCnye3t0Ix1nC1zAopcNFkNxtUhHqIg=";
+      })
     ];
 
     languages = {
@@ -68,6 +85,17 @@
           # rustc.source = "discover"; # make rustc internal crates work
           check.command = "clippy";
         };
+        greybel-lsp = {
+          command = "greybel-languageserver";
+          args = ["--stdio"];
+        };
+        angular-lsp = {
+          command = "ngserver";
+          args = ["--stdio"];
+
+          roots = ["angular.json"];
+        };
+        sqls.command = "sqls";
       };
 
       language = [
@@ -78,6 +106,26 @@
         {
           name = "python";
           language-servers = ["pyright"];
+        }
+        {
+          name = "sql";
+          language-servers = ["sqls"];
+        }
+        {
+          name = "greyscript";
+          scope = "source.greyscript";
+
+          file-types = ["gs" "ms" "src"];
+          language-servers = ["greybel-lsp"];
+        }
+
+        {
+          name = "html";
+          language-servers = ["angular-lsp" "vscode-html-language-server"];
+        }
+        {
+          name = "typescript";
+          language-servers = ["typescript-language-server" "angular-lsp"];
         }
       ];
     };
