@@ -67,11 +67,13 @@
     python3
     docker
     bun
+    gh
 
     # CLI: additional
     fastfetch
     spotdl
     figlet
+    unzip
 
     # CLI: nix related
     nixos-anywhere
@@ -81,7 +83,7 @@
     statix
 
     # blurgh for school
-    ciscoPacketTracer8
+    unstable.ciscoPacketTracer8
     nodePackages."@angular/cli"
     dotnet-sdk_8
   ];
