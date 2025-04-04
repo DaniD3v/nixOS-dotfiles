@@ -6,6 +6,7 @@
 }: {
   wayland.windowManager.hyprland = {
     enable = true;
+    systemd.variables = ["--all"];
 
     settings = {
       source = "~/.config/hypr/hyprland-colors.conf";
@@ -58,12 +59,16 @@
       general = {
         border_size = 2;
 
-        gaps_out = 6;
+        gaps_out = 5;
         gaps_in = 3;
+
+        snap = {
+          enabled = true;
+        };
       };
 
       decoration = {
-        rounding = 3;
+        rounding = 5;
 
         blur = {
           size = 7;
@@ -77,14 +82,10 @@
         bezier = [
           "overshoot, 0.21, 0.82, 0.39, 1.3"
           "overshoot-light, 0.21, 0.82, 0.39, 1.11"
-
-          "linear, 0, 0, 1, 1"
         ];
 
         animation = [
           "windows,    1, 4, overshoot, popin 80%"
-
-          #"borderangle, 1, 10, linear, loop" # TODO fix unclean animation hyprland issue
           "workspaces, 1, 6, overshoot-light"
         ];
       };
