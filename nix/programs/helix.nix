@@ -5,16 +5,23 @@
 }: {
   programs.helix = {
     defaultEditor = true;
+    package = pkgs.unstable.helix;
 
     settings = {
       theme = "ayu_mirage";
       # theme = "base16_transparent";
 
       editor = {
+        lsp.display-inlay-hints = true;
+        inline-diagnostics = {
+          cursor-line = "hint";
+          other-lines = "info";
+        };
+
         indent-guides.render = true;
         cursor-shape.insert = "bar";
 
-        completion-trigger-len = 0;
+        auto-save.focus-lost = true;
       };
 
       keys = let
